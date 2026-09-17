@@ -1,238 +1,1926 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#10070d">
-<title>Nossa História ❤️</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="Estudos Bíblicos — Bispo Emanuel e Missionária Ariane">
+<title>Estudos Bíblicos | Bispo Emanuel e Missionária Ariane</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&family=Parisienne&display=swap" rel="stylesheet"><style>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+
+<style>
 :root{
---bg:#0b060a;
---bg2:#160a12;
---pink:#ff4f83;
---pink2:#d92f68;
---rose:#ffb4c9;
---text:#fff;
---muted:#d9c5ce;
---dark:#24131c;
---card:rgba(255,255,255,.07);
---line:rgba(255,255,255,.12);
+--bg:#050b14;
+--bg2:#091525;
+--bg3:#0d1d31;
+--blue:#1d6fff;
+--blue2:#164ec2;
+--gold:#d7ad55;
+--gold2:#f1d28b;
+--white:#fff;
+--text:#eef4ff;
+--muted:#aab8ca;
+--card:rgba(255,255,255,.055);
+--card2:rgba(255,255,255,.08);
+--line:rgba(255,255,255,.11);
+--shadow:0 30px 90px rgba(0,0,0,.35);
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
-button,a{font:inherit}
-::selection{background:var(--pink);color:#fff}
 
-/* FUNDO */
-.background{position:fixed;inset:0;z-index:-5;overflow:hidden;background:radial-gradient(circle at 50% 20%,#48152e 0,#1c0b17 35%,#090508 75%)}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35}
-.orb1{width:400px;height:400px;background:#e62e68;top:-150px;left:-120px}
-.orb2{width:450px;height:450px;background:#7e1e52;right:-180px;top:35%}
-.orb3{width:350px;height:350px;background:#ff7199;left:20%;bottom:-250px;opacity:.15}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box
+}
 
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;z-index:1000;background:linear-gradient(180deg,rgba(8,4,7,.8),transparent);backdrop-filter:blur(8px)}
-.logo{font-family:Parisienne,cursive;font-size:30px;color:#fff;text-decoration:none}
-.nav-link{color:#fff;text-decoration:none;font-size:13px;opacity:.8;transition:.3s}
-.nav-link:hover{opacity:1;color:var(--rose)}
+html{
+scroll-behavior:smooth
+}
 
-/* HERO */
-.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 20px 70px;position:relative}
-.hero-content{max-width:900px;animation:entrada 1.2s ease both}
-.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:4px;color:var(--rose);margin-bottom:25px}
-.heart{font-size:76px;display:inline-block;animation:pulse 1.8s ease-in-out infinite;text-shadow:0 0 40px rgba(255,79,131,.5)}
-.hero h1{font-family:"DM Serif Display",serif;font-weight:400;font-size:clamp(4rem,11vw,8.5rem);line-height:.9;letter-spacing:-3px;margin-top:25px}
-.hero h1 span{color:var(--rose)}
-.hero-text{max-width:620px;margin:30px auto 0;color:var(--muted);font-size:16px;line-height:1.8;font-weight:300}
-.hero-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:40px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 25px;border-radius:100px;text-decoration:none;font-size:13px;font-weight:600;transition:.35s;border:1px solid var(--line)}
-.btn-primary{background:linear-gradient(135deg,var(--pink),var(--pink2));color:#fff;box-shadow:0 12px 35px rgba(255,79,131,.25)}
-.btn-primary:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(255,79,131,.4)}
-.btn-outline{color:#fff;background:rgba(255,255,255,.04);backdrop-filter:blur(10px)}
-.btn-outline:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
-.scroll{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#bba7b0}
-.scroll:after{content:"";display:block;width:1px;height:35px;background:linear-gradient(#fff,transparent);margin:9px auto 0}
+body{
+font-family:Inter,Arial,sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden
+}
 
-/* SEÇÕES */
-.section{padding:120px 20px}
-.container{width:min(1100px,100%);margin:auto}
-.section-label{text-align:center;color:var(--pink);font-size:10px;text-transform:uppercase;letter-spacing:4px;margin-bottom:15px}
-.section-title{text-align:center;font-family:"DM Serif Display",serif;font-size:clamp(2.8rem,7vw,5rem);font-weight:400;line-height:1;color:#fff}
-.section-description{text-align:center;color:#aa969f;max-width:600px;margin:20px auto 65px;line-height:1.7;font-size:14px}
+a,
+button,
+input{
+font:inherit
+}
 
-/* CONTADOR */
-.counter{position:relative;border:1px solid var(--line);border-radius:35px;padding:50px 30px;background:rgba(255,255,255,.055);backdrop-filter:blur(18px);box-shadow:0 30px 100px rgba(0,0,0,.35);overflow:hidden}
-.counter:before{content:"";position:absolute;left:15%;right:15%;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--pink),transparent)}
-.counter-title{text-align:center;font-family:"DM Serif Display",serif;font-size:28px;font-weight:400;margin-bottom:35px}
-.time{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.time-item{text-align:center;padding:25px 10px;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:rgba(0,0,0,.18)}
-.time-number{display:block;font-size:clamp(2rem,5vw,3.4rem);font-weight:600;letter-spacing:-2px;color:#fff}
-.time-label{display:block;margin-top:5px;font-size:9px;text-transform:uppercase;letter-spacing:2px;color:#b9a4ae}
+button,
+a{
+-webkit-tap-highlight-color:transparent
+}
 
-/* HISTÓRIA */
-.timeline{position:relative;margin-top:60px}
-.timeline:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(transparent,#e65a84,#e65a84,transparent)}
-.event{width:50%;position:relative;padding:0 50px 70px}
-.event:nth-child(odd){margin-right:auto;text-align:right}
-.event:nth-child(even){margin-left:50%;text-align:left}
-.event-dot{position:absolute;top:5px;width:14px;height:14px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 6px rgba(255,79,131,.12),0 0 25px rgba(255,79,131,.7)}
-.event:nth-child(odd) .event-dot{right:-7px}
-.event:nth-child(even) .event-dot{left:-7px}
-.event-date{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--pink);font-weight:600}
-.event h3{font-family:"DM Serif Display",serif;font-size:30px;font-weight:400;margin:12px 0;color:#fff}
-.event p{color:#aa969f;font-size:14px;line-height:1.8}
+::selection{
+background:var(--gold);
+color:#08101c
+}
 
-/* CARTA */
-.letter{margin-top:40px;padding:65px;position:relative;border:1px solid var(--line);border-radius:35px;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));overflow:hidden}
-.letter:after{content:"❤️";position:absolute;right:-20px;bottom:-50px;font-size:200px;opacity:.035}
-.letter h2{font-family:"DM Serif Display",serif;font-size:42px;font-weight:400;margin-bottom:30px}
-.letter p{color:#cbb8c0;line-height:2;font-size:15px;max-width:760px}
-.signature{font-family:Parisienne,cursive;font-size:38px;color:var(--rose);margin-top:35px}
+/* =========================
+   FUNDO
+========================= */
 
-/* FRASE */
-.quote{padding:130px 20px;text-align:center;background:linear-gradient(180deg,transparent,rgba(115,22,58,.16),transparent)}
-.quote-mark{font-family:"DM Serif Display",serif;font-size:90px;color:var(--pink);line-height:.5}
-.quote p{max-width:800px;margin:35px auto;font-family:"DM Serif Display",serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:400;line-height:1.2}
-.quote small{color:#a997a0;text-transform:uppercase;letter-spacing:3px;font-size:9px}
+.background{
+position:fixed;
+inset:0;
+z-index:-10;
+overflow:hidden;
+background:
+radial-gradient(circle at 50% 10%,#18345b 0,#0b1729 32%,#050a12 75%)
+}
 
-/* FINAL */
-.final{min-height:90svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px;background:radial-gradient(circle at center,#4b1530 0,#1b0915 45%,#080508 80%);position:relative}
-.final-content{max-width:850px}
-.final-heart{font-size:65px;margin-bottom:30px}
-.final h2{font-family:"DM Serif Display",serif;font-size:clamp(3.5rem,9vw,7.5rem);font-weight:400;line-height:.95}
-.final h2 span{color:var(--rose)}
-.final p{margin:30px auto;color:#cbb8c0;line-height:1.8;font-size:15px}
-.footer{margin-top:70px;color:#806d76;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.background:before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
+background-size:55px 55px;
+mask-image:linear-gradient(to bottom,#000,transparent 90%)
+}
 
-/* CORAÇÕES */
-.floating-heart{position:fixed;bottom:-30px;pointer-events:none;z-index:999;font-size:16px;animation:floatUp linear forwards}
-@keyframes floatUp{0%{transform:translateY(0);opacity:0}10%{opacity:.8}100%{transform:translateY(-110vh) rotate(180deg);opacity:0}}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
-@keyframes entrada{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.orb{
+position:absolute;
+border-radius:50%;
+filter:blur(90px);
+pointer-events:none
+}
 
-/* RESPONSIVO */
+.orb1{
+width:430px;
+height:430px;
+background:#145cff;
+top:-200px;
+left:-170px;
+opacity:.2
+}
+
+.orb2{
+width:500px;
+height:500px;
+background:#b8872f;
+right:-250px;
+top:28%;
+opacity:.13
+}
+
+.orb3{
+width:380px;
+height:380px;
+background:#236fff;
+left:25%;
+bottom:-250px;
+opacity:.12
+}
+
+/* =========================
+   NAV
+========================= */
+
+.nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+height:74px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 6%;
+z-index:1000;
+background:linear-gradient(
+180deg,
+rgba(3,8,15,.92),
+rgba(3,8,15,.35),
+transparent
+);
+backdrop-filter:blur(14px);
+-webkit-backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,.03)
+}
+
+.logo{
+font-family:Parisienne,cursive;
+font-size:31px;
+color:var(--gold2);
+text-decoration:none;
+white-space:nowrap
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:28px
+}
+
+.nav-link{
+color:#dbe7f7;
+text-decoration:none;
+font-size:12px;
+letter-spacing:.4px;
+transition:.3s;
+opacity:.85
+}
+
+.nav-link:hover{
+color:var(--gold2);
+opacity:1
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+min-height:100svh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 20px 80px;
+position:relative
+}
+
+.hero-content{
+width:min(950px,100%);
+animation:entrada 1s ease both
+}
+
+.eyebrow{
+display:inline-flex;
+align-items:center;
+gap:12px;
+font-size:10px;
+text-transform:uppercase;
+letter-spacing:4px;
+color:var(--gold2);
+margin-bottom:28px
+}
+
+.eyebrow:before,
+.eyebrow:after{
+content:"";
+width:35px;
+height:1px;
+background:linear-gradient(90deg,transparent,var(--gold))
+}
+
+.eyebrow:after{
+background:linear-gradient(90deg,var(--gold),transparent)
+}
+
+.bible-symbol{
+font-size:68px;
+line-height:1;
+margin-bottom:22px;
+filter:drop-shadow(0 0 30px rgba(215,173,85,.18))
+}
+
+.hero h1{
+font-family:"DM Serif Display",serif;
+font-weight:400;
+font-size:clamp(3.5rem,10vw,8rem);
+line-height:.92;
+letter-spacing:-3px
+}
+
+.hero h1 span{
+display:block;
+color:var(--gold2)
+}
+
+.hero-text{
+max-width:690px;
+margin:30px auto 0;
+color:var(--muted);
+font-size:15px;
+line-height:1.9;
+font-weight:300
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:40px
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:9px;
+padding:15px 25px;
+border-radius:100px;
+text-decoration:none;
+font-size:12px;
+font-weight:600;
+transition:.35s;
+border:1px solid var(--line);
+cursor:pointer
+}
+
+.btn-primary{
+background:linear-gradient(135deg,#2777ff,#1748b5);
+color:#fff;
+box-shadow:0 15px 40px rgba(29,111,255,.22)
+}
+
+.btn-primary:hover{
+transform:translateY(-4px);
+box-shadow:0 20px 50px rgba(29,111,255,.35)
+}
+
+.btn-gold{
+background:linear-gradient(135deg,#e3bd6a,#a87827);
+color:#10151d;
+box-shadow:0 15px 40px rgba(215,173,85,.15)
+}
+
+.btn-gold:hover{
+transform:translateY(-4px);
+box-shadow:0 20px 50px rgba(215,173,85,.28)
+}
+
+.btn-outline{
+color:#fff;
+background:rgba(255,255,255,.035);
+backdrop-filter:blur(10px)
+}
+
+.btn-outline:hover{
+background:rgba(255,255,255,.08);
+transform:translateY(-3px)
+}
+
+.scroll{
+position:absolute;
+bottom:24px;
+left:50%;
+transform:translateX(-50%);
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:#77889d
+}
+
+.scroll:after{
+content:"";
+display:block;
+width:1px;
+height:35px;
+background:linear-gradient(#8fa0b4,transparent);
+margin:9px auto 0
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section{
+padding:120px 20px
+}
+
+.container{
+width:min(1120px,100%);
+margin:auto
+}
+
+.section-label{
+text-align:center;
+color:var(--gold);
+font-size:9px;
+text-transform:uppercase;
+letter-spacing:4px;
+margin-bottom:15px
+}
+
+.section-title{
+text-align:center;
+font-family:"DM Serif Display",serif;
+font-size:clamp(2.8rem,7vw,5rem);
+font-weight:400;
+line-height:1;
+color:#fff
+}
+
+.section-description{
+text-align:center;
+color:#8fa0b3;
+max-width:650px;
+margin:20px auto 60px;
+line-height:1.8;
+font-size:14px
+}
+
+/* =========================
+   VERSÍCULO
+========================= */
+
+.verse-box{
+position:relative;
+padding:65px 55px;
+border:1px solid rgba(215,173,85,.2);
+border-radius:35px;
+background:
+linear-gradient(
+145deg,
+rgba(215,173,85,.08),
+rgba(255,255,255,.025)
+);
+box-shadow:var(--shadow);
+overflow:hidden;
+text-align:center
+}
+
+.verse-box:before{
+content:"";
+position:absolute;
+left:15%;
+right:15%;
+top:0;
+height:1px;
+background:linear-gradient(
+90deg,
+transparent,
+var(--gold),
+transparent
+)
+}
+
+.verse-symbol{
+font-family:"DM Serif Display",serif;
+font-size:90px;
+line-height:.4;
+color:rgba(215,173,85,.35);
+margin-bottom:35px
+}
+
+.verse-text{
+font-family:"DM Serif Display",serif;
+font-size:clamp(1.8rem,4vw,3rem);
+line-height:1.25;
+max-width:900px;
+margin:auto;
+color:#fff
+}
+
+.verse-reference{
+margin-top:28px;
+font-size:10px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:var(--gold2);
+font-weight:600
+}
+
+/* =========================
+   BUSCA
+========================= */
+
+.search-area{
+margin:0 auto 55px;
+width:min(720px,100%)
+}
+
+.search-box{
+display:flex;
+align-items:center;
+gap:12px;
+padding:7px 8px 7px 20px;
+border:1px solid var(--line);
+border-radius:100px;
+background:rgba(255,255,255,.045);
+backdrop-filter:blur(15px)
+}
+
+.search-icon{
+font-size:18px;
+color:var(--gold)
+}
+
+.search-box input{
+width:100%;
+border:0;
+outline:0;
+background:transparent;
+color:#fff;
+font-size:14px
+}
+
+.search-box input::placeholder{
+color:#77879a
+}
+
+.search-button{
+border:0;
+border-radius:100px;
+padding:12px 20px;
+background:var(--gold);
+color:#111a25;
+font-weight:700;
+font-size:11px;
+cursor:pointer
+}
+
+/* =========================
+   CATEGORIAS
+========================= */
+
+.category-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:80px
+}
+
+.category{
+padding:28px 20px;
+border:1px solid var(--line);
+border-radius:22px;
+background:var(--card);
+text-align:center;
+transition:.35s;
+cursor:pointer
+}
+
+.category:hover{
+transform:translateY(-5px);
+border-color:rgba(215,173,85,.35);
+background:var(--card2)
+}
+
+.category-icon{
+font-size:30px;
+display:block;
+margin-bottom:13px
+}
+
+.category strong{
+display:block;
+font-size:13px;
+margin-bottom:6px
+}
+
+.category span{
+font-size:10px;
+color:#8292a5
+}
+
+/* =========================
+   ESTUDOS
+========================= */
+
+.study-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px
+}
+
+.study-card{
+position:relative;
+padding:30px;
+border:1px solid var(--line);
+border-radius:26px;
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.07),
+rgba(255,255,255,.025)
+);
+overflow:hidden;
+transition:.4s
+}
+
+.study-card:hover{
+transform:translateY(-7px);
+border-color:rgba(215,173,85,.3);
+box-shadow:0 25px 70px rgba(0,0,0,.3)
+}
+
+.study-card:after{
+content:"";
+position:absolute;
+width:100px;
+height:100px;
+border-radius:50%;
+background:var(--blue);
+filter:blur(65px);
+right:-50px;
+bottom:-50px;
+opacity:.12
+}
+
+.study-number{
+font-size:10px;
+letter-spacing:2px;
+color:var(--gold);
+text-transform:uppercase
+}
+
+.study-icon{
+font-size:32px;
+margin:22px 0 15px
+}
+
+.study-card h3{
+font-family:"DM Serif Display",serif;
+font-size:29px;
+font-weight:400;
+margin-bottom:13px
+}
+
+.study-card p{
+font-size:13px;
+line-height:1.8;
+color:#91a1b4;
+margin-bottom:25px
+}
+
+.study-link{
+display:inline-flex;
+align-items:center;
+gap:8px;
+font-size:10px;
+font-weight:700;
+text-transform:uppercase;
+letter-spacing:1.5px;
+color:var(--gold2);
+text-decoration:none
+}
+
+.study-link:hover{
+color:#fff
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.feature{
+display:grid;
+grid-template-columns:1fr 1.5fr;
+gap:45px;
+align-items:center;
+padding:55px;
+border:1px solid var(--line);
+border-radius:35px;
+background:
+radial-gradient(
+circle at 15% 50%,
+rgba(29,111,255,.12),
+transparent 45%
+),
+rgba(255,255,255,.035);
+overflow:hidden
+}
+
+.feature-symbol{
+height:270px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:25px;
+border:1px solid rgba(215,173,85,.16);
+background:
+linear-gradient(
+145deg,
+rgba(215,173,85,.08),
+rgba(255,255,255,.015)
+);
+font-size:100px
+}
+
+.feature-label{
+color:var(--gold);
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase
+}
+
+.feature h2{
+font-family:"DM Serif Display",serif;
+font-size:clamp(2.4rem,5vw,4.2rem);
+font-weight:400;
+line-height:1;
+margin:15px 0 20px
+}
+
+.feature p{
+font-size:14px;
+color:#9aabbf;
+line-height:1.9;
+max-width:620px
+}
+
+.feature-list{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin:25px 0
+}
+
+.feature-item{
+font-size:11px;
+color:#c6d2e0;
+padding:12px;
+border:1px solid rgba(255,255,255,.07);
+border-radius:12px;
+background:rgba(255,255,255,.025)
+}
+
+/* =========================
+   PROPÓSITO
+========================= */
+
+.purpose{
+padding:130px 20px;
+text-align:center;
+background:
+linear-gradient(
+180deg,
+transparent,
+rgba(20,59,105,.15),
+transparent
+)
+}
+
+.purpose-mark{
+font-family:"DM Serif Display",serif;
+font-size:100px;
+line-height:.4;
+color:var(--gold);
+opacity:.7
+}
+
+.purpose h2{
+font-family:"DM Serif Display",serif;
+font-size:clamp(2rem,5vw,3.8rem);
+font-weight:400;
+max-width:850px;
+margin:40px auto 25px;
+line-height:1.2
+}
+
+.purpose p{
+max-width:650px;
+margin:auto;
+color:#92a1b3;
+font-size:13px;
+line-height:1.9
+}
+
+/* =========================
+   AUTORES
+========================= */
+
+.authors{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px
+}
+
+.author{
+padding:35px;
+border:1px solid var(--line);
+border-radius:25px;
+background:var(--card);
+text-align:center
+}
+
+.author-icon{
+width:70px;
+height:70px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 auto 20px;
+border-radius:50%;
+border:1px solid rgba(215,173,85,.25);
+background:rgba(215,173,85,.07);
+font-size:30px
+}
+
+.author h3{
+font-family:"DM Serif Display",serif;
+font-size:30px;
+font-weight:400
+}
+
+.author p{
+margin-top:10px;
+color:#8495a8;
+font-size:12px;
+line-height:1.7
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+min-height:75svh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:100px 20px;
+position:relative;
+background:
+radial-gradient(
+circle at center,
+#142d4e 0,
+#091523 45%,
+#04080e 80%
+)
+}
+
+.final-content{
+max-width:900px
+}
+
+.final-symbol{
+font-size:55px;
+margin-bottom:30px
+}
+
+.final h2{
+font-family:"DM Serif Display",serif;
+font-size:clamp(3rem,8vw,7rem);
+font-weight:400;
+line-height:.95
+}
+
+.final h2 span{
+color:var(--gold2)
+}
+
+.final p{
+max-width:650px;
+margin:30px auto;
+color:#a5b3c3;
+line-height:1.9;
+font-size:14px
+}
+
+.signature{
+font-family:Parisienne,cursive;
+font-size:39px;
+color:var(--gold2);
+margin-top:35px
+}
+
+.footer{
+margin-top:60px;
+color:#637487;
+font-size:9px;
+letter-spacing:2px;
+text-transform:uppercase
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+position:fixed;
+inset:0;
+z-index:2000;
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(12px)
+}
+
+.modal.active{
+display:flex
+}
+
+.modal-content{
+position:relative;
+width:min(700px,100%);
+max-height:85vh;
+overflow:auto;
+padding:40px;
+border:1px solid var(--line);
+border-radius:28px;
+background:#0a1422;
+box-shadow:0 30px 100px rgba(0,0,0,.55)
+}
+
+.modal-close{
+position:absolute;
+right:18px;
+top:18px;
+width:38px;
+height:38px;
+border:1px solid var(--line);
+border-radius:50%;
+background:rgba(255,255,255,.05);
+color:#fff;
+cursor:pointer
+}
+
+.modal-content h2{
+font-family:"DM Serif Display",serif;
+font-size:38px;
+font-weight:400;
+margin-bottom:20px
+}
+
+.modal-content p{
+color:#a7b5c5;
+line-height:1.9;
+font-size:14px
+}
+
+.modal-content .verse{
+margin-top:25px;
+padding:25px;
+border-left:2px solid var(--gold);
+background:rgba(215,173,85,.045);
+color:#e7edf5;
+font-family:"DM Serif Display",serif;
+font-size:20px;
+line-height:1.6
+}
+
+/* =========================
+   CORAÇÕES / PARTÍCULAS
+========================= */
+
+.particle{
+position:fixed;
+bottom:-20px;
+pointer-events:none;
+z-index:999;
+color:var(--gold);
+font-size:12px;
+animation:subir linear forwards;
+opacity:0
+}
+
+@keyframes subir{
+0%{
+transform:translateY(0) scale(.7);
+opacity:0
+}
+15%{
+opacity:.5
+}
+100%{
+transform:translateY(-110vh) scale(1.3);
+opacity:0
+}
+}
+
+@keyframes entrada{
+from{
+opacity:0;
+transform:translateY(30px)
+}
+to{
+opacity:1;
+transform:none
+}
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:opacity .8s ease,transform .8s ease
+}
+
+.reveal.visible{
+opacity:1;
+transform:none
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:900px){
+
+.category-grid{
+grid-template-columns:repeat(2,1fr)
+}
+
+.study-grid{
+grid-template-columns:1fr 1fr
+}
+
+.feature{
+grid-template-columns:1fr;
+padding:30px
+}
+
+.feature-symbol{
+height:210px
+}
+
+}
+
 @media(max-width:700px){
-.nav{height:60px;padding:0 20px}
-.logo{font-size:26px}
-.hero h1{letter-spacing:-1px}
-.heart{font-size:60px}
-.hero-text{font-size:14px}
-.section{padding:85px 15px}
-.counter{padding:35px 15px;border-radius:25px}
-.time{grid-template-columns:repeat(2,1fr)}
-.time-item{padding:20px 5px}
-.timeline:before{left:8px}
-.event,.event:nth-child(even),.event:nth-child(odd){width:100%;margin:0;text-align:left;padding:0 0 55px 40px}
-.event-dot,.event:nth-child(odd) .event-dot,.event:nth-child(even) .event-dot{left:1px;right:auto}
-.event h3{font-size:27px}
-.letter{padding:35px 25px;border-radius:25px}
-.letter h2{font-size:35px}
-.quote{padding:90px 20px}
+
+.nav{
+height:62px;
+padding:0 20px
 }
+
+.logo{
+font-size:26px
+}
+
+.nav-links{
+gap:15px
+}
+
+.nav-link:nth-child(1){
+display:none
+}
+
+.hero{
+padding:105px 18px 75px
+}
+
+.bible-symbol{
+font-size:55px
+}
+
+.hero h1{
+letter-spacing:-1px
+}
+
+.hero-text{
+font-size:13px
+}
+
+.section{
+padding:85px 15px
+}
+
+.verse-box{
+padding:50px 23px;
+border-radius:25px
+}
+
+.verse-symbol{
+font-size:75px
+}
+
+.category-grid{
+grid-template-columns:1fr 1fr;
+gap:10px
+}
+
+.category{
+padding:22px 10px
+}
+
+.study-grid{
+grid-template-columns:1fr
+}
+
+.study-card{
+padding:27px
+}
+
+.feature{
+border-radius:25px
+}
+
+.feature-list{
+grid-template-columns:1fr
+}
+
+.authors{
+grid-template-columns:1fr
+}
+
+.purpose{
+padding:90px 20px
+}
+
+.final{
+min-height:70svh
+}
+
+.modal-content{
+padding:30px 22px
+}
+
+.modal-content h2{
+font-size:31px
+}
+
+.search-box{
+padding-left:15px
+}
+
+.search-button{
+padding:11px 16px
+}
+
+}
+
 @media(prefers-reduced-motion:reduce){
-*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+
+*,
+*:before,
+*:after{
+animation:none!important;
+transition:none!important;
+scroll-behavior:auto!important
 }
-</style></head><body><div class="background">
+
+.reveal{
+opacity:1;
+transform:none
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- FUNDO -->
+<div class="background">
 <div class="orb orb1"></div>
 <div class="orb orb2"></div>
 <div class="orb orb3"></div>
-</div><nav class="nav">
-<a href="#" class="logo">Nossa História</a>
-<a href="#historia" class="nav-link">Nossa história ↓</a>
-</nav><section class="hero">
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+
+<a href="#" class="logo">
+Estudos Bíblicos
+</a>
+
+<div class="nav-links">
+<a href="#estudos" class="nav-link">Estudos</a>
+<a href="#versiculo" class="nav-link">Versículo</a>
+<a href="#sobre" class="nav-link">Sobre</a>
+</div>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
 <div class="hero-content">
-<div class="eyebrow">Uma história escrita a dois</div>
-<div class="heart">❤️</div>
-<h1>Eu escolheria<br><span>você.</span></h1>
-<p class="hero-text">Entre tantos caminhos, a vida fez nossos caminhos se encontrarem. E desde então, começamos a escrever a nossa própria história.</p>
+
+<div class="eyebrow">
+Palavra • Ensino • Edificação
+</div>
+
+<div class="bible-symbol">
+📖
+</div>
+
+<h1>
+Conhecer a Palavra.
+<span>Viver pela fé.</span>
+</h1>
+
+<p class="hero-text">
+Um espaço dedicado ao estudo das Escrituras, ao crescimento espiritual,
+ao discernimento e à edificação da Igreja através da Palavra de Deus.
+</p>
+
 <div class="hero-buttons">
-<a href="#historia" class="btn btn-primary">Conhecer nossa história ❤️</a>
-<a href="#carta" class="btn btn-outline">Uma mensagem para você</a>
-</div>
-</div>
-<div class="scroll">Deslize</div>
-</section><section class="section" id="historia">
-<div class="container"><div class="section-label">Desde o nosso começo</div>
-<h2 class="section-title">Tempo de nós</h2>
-<p class="section-description">Cada segundo representa mais um pedacinho da história que estamos construindo juntos.</p><div class="counter">
-<h3 class="counter-title">Estamos juntos há... ❤️</h3>
-<div class="time">
-<div class="time-item"><strong class="time-number" id="dias">0</strong><span class="time-label">Dias</span></div>
-<div class="time-item"><strong class="time-number" id="horas">0</strong><span class="time-label">Horas</span></div>
-<div class="time-item"><strong class="time-number" id="minutos">0</strong><span class="time-label">Minutos</span></div>
-<div class="time-item"><strong class="time-number" id="segundos">0</strong><span class="time-label">Segundos</span></div>
-</div>
-</div></div>
-</section><section class="section">
-<div class="container"><div class="section-label">Capítulos</div>
-<h2 class="section-title">Nossa história</h2>
-<p class="section-description">Algumas datas se tornam especiais porque passaram a fazer parte de nós.</p><div class="timeline"><div class="event">
-<div class="event-dot"></div>
-<span class="event-date">15 de fevereiro de 2025</span>
-<h3>O começo de nós ❤️</h3>
-<p>Foi quando a nossa história começou. Um dia que ganhou um significado completamente diferente e que marcou o início de uma nova caminhada.</p>
-</div><div class="event">
-<div class="event-dot"></div>
-<span class="event-date">12 de março de 2025</span>
-<h3>O pedido de namoro 💕</h3>
-<p>Um momento especial que transformou aquilo que já estava sendo construído em um compromisso ainda mais bonito entre nós.</p>
-</div><div class="event">
-<div class="event-dot"></div>
-<span class="event-date">11 de julho de 2025</span>
-<h3>Nosso casamento 💍</h3>
-<p>O dia em que dissemos sim para uma caminhada compartilhada e decidimos escrever juntos muitos outros capítulos.</p>
-</div></div></div>
-</section><section class="section" id="carta">
-<div class="container"><div class="section-label">De coração</div><div class="letter">
-<h2>Para você... ❤️</h2><p>Existem encontros que parecem acontecer por acaso, mas que mudam completamente o caminho que estamos percorrendo.</p><br><p>Entre conversas, risadas, desafios, abraços e tantos momentos que só nós conhecemos, fomos construindo algo que se tornou parte da nossa vida.</p><br><p>Talvez esta página seja pequena diante de tudo que ainda temos para viver, mas ela guarda uma certeza: eu sou grato por cada capítulo que já escrevemos e por todos aqueles que ainda vamos escrever.</p><div class="signature">Com amor, para sempre ❤️</div>
-</div></div>
-</section><section class="quote">
-<div class="quote-mark">“</div>
-<p>Algumas histórias são encontradas. As nossas, nós continuamos escrevendo.</p>
-<small>Uma história • Dois corações • Um propósito</small>
-</section><section class="final">
-<div class="final-content"><div class="final-heart">❤️</div><h2>E isso é<br><span>só o começo.</span></h2><p>Ainda existem muitos lugares para conhecer, muitos sonhos para realizar, muitos momentos para guardar e incontáveis páginas para escrever.</p><a href="#historia" class="btn btn-primary">Voltar ao começo ❤️</a>
 
-<div class="footer">Nossa História • 2025 — Sempre</div></div>
-</section><script>
-const dataInicio=new Date(2025,1,15,0,0,0);
+<a href="#estudos" class="btn btn-gold">
+📖 Explorar estudos
+</a>
 
-function atualizarContador(){
-const agora=new Date();
-let diferenca=agora-dataInicio;
-if(diferenca<0)diferenca=0;
-const total=Math.floor(diferenca/1000);
-document.getElementById("dias").textContent=Math.floor(total/86400);
-document.getElementById("horas").textContent=Math.floor(total%86400/3600);
-document.getElementById("minutos").textContent=Math.floor(total%3600/60);
-document.getElementById("segundos").textContent=total%60;
+<a href="#versiculo" class="btn btn-outline">
+Versículo em destaque
+</a>
+
+</div>
+
+</div>
+
+<div class="scroll">
+Deslize
+</div>
+
+</section>
+
+<!-- VERSÍCULO -->
+<section class="section" id="versiculo">
+
+<div class="container">
+
+<div class="section-label">
+Palavra para hoje
+</div>
+
+<h2 class="section-title">
+A Palavra permanece.
+</h2>
+
+<p class="section-description">
+A Escritura nos ensina, corrige, instrui e conduz em nossa caminhada com Deus.
+</p>
+
+<div class="verse-box reveal">
+
+<div class="verse-symbol">
+“
+</div>
+
+<div class="verse-text">
+“Lâmpada para os meus pés é tua palavra,
+e luz para o meu caminho.”
+</div>
+
+<div class="verse-reference">
+Salmos 119:105
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- BUSCA -->
+<section class="section" id="estudos">
+
+<div class="container">
+
+<div class="section-label">
+Biblioteca de estudos
+</div>
+
+<h2 class="section-title">
+Estude a Palavra
+</h2>
+
+<p class="section-description">
+Pesquise temas, assuntos e estudos para aprofundar seu conhecimento das Escrituras.
+</p>
+
+<div class="search-area">
+
+<div class="search-box">
+
+<span class="search-icon">
+⌕
+</span>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Pesquisar estudo..."
+autocomplete="off"
+>
+
+<button
+class="search-button"
+onclick="buscarEstudos()">
+Buscar
+</button>
+
+</div>
+
+</div>
+
+<!-- CATEGORIAS -->
+
+<div class="category-grid">
+
+<div class="category" onclick="filtrarCategoria('fé')">
+<span class="category-icon">🕊️</span>
+<strong>Fé</strong>
+<span>Confiança em Deus</span>
+</div>
+
+<div class="category" onclick="filtrarCategoria('oração')">
+<span class="category-icon">🙏</span>
+<strong>Oração</strong>
+<span>Vida de oração</span>
+</div>
+
+<div class="category" onclick="filtrarCategoria('libertação')">
+<span class="category-icon">🔓</span>
+<strong>Libertação</strong>
+<span>Vida espiritual</span>
+</div>
+
+<div class="category" onclick="filtrarCategoria('batalha')">
+<span class="category-icon">⚔️</span>
+<strong>Batalha Espiritual</strong>
+<span>Discernimento</span>
+</div>
+
+</div>
+
+<!-- CARDS -->
+
+<div class="study-grid" id="studyGrid">
+
+<article
+class="study-card reveal"
+data-category="batalha espiritual discernimento">
+
+<div class="study-number">
+Estudo 01
+</div>
+
+<div class="study-icon">
+⚔️
+</div>
+
+<h3>
+Batalha Espiritual
+</h3>
+
+<p>
+Discernimento, preparação e combate na batalha espiritual
+à luz de Efésios 6:10–18.
+</p>
+
+<a
+href="#"
+class="study-link"
+onclick="abrirEstudo('batalha');return false">
+Abrir estudo →
+</a>
+
+</article>
+
+<article
+class="study-card reveal"
+data-category="libertação">
+
+<div class="study-number">
+Estudo 02
+</div>
+
+<div class="study-icon">
+🔓
+</div>
+
+<h3>
+Libertação
+</h3>
+
+<p>
+Um estudo bíblico sobre arrependimento, renúncia,
+santidade e liberdade em Cristo.
+</p>
+
+<a
+href="#"
+class="study-link"
+onclick="abrirEstudo('libertacao');return false">
+Abrir estudo →
+</a>
+
+</article>
+
+<article
+class="study-card reveal"
+data-category="fé">
+
+<div class="study-number">
+Estudo 03
+</div>
+
+<div class="study-icon">
+🌱
+</div>
+
+<h3>
+Fé como um Grão
+</h3>
+
+<p>
+Reflexão sobre Mateus 13 e a importância de cultivar
+uma fé viva e perseverante.
+</p>
+
+<a
+href="#"
+class="study-link"
+onclick="abrirEstudo('fe');return false">
+Abrir estudo →
+</a>
+
+</article>
+
+<article
+class="study-card reveal"
+data-category="oração">
+
+<div class="study-number">
+Estudo 04
+</div>
+
+<div class="study-icon">
+🙏
+</div>
+
+<h3>
+Vida de Oração
+</h3>
+
+<p>
+Princípios bíblicos para desenvolver uma vida constante
+de oração e comunhão com Deus.
+</p>
+
+<a
+href="#"
+class="study-link"
+onclick="abrirEstudo('oracao');return false">
+Abrir estudo →
+</a>
+
+</article>
+
+<article
+class="study-card reveal"
+data-category="discernimento palavra">
+
+<div class="study-number">
+Estudo 05
+</div>
+
+<div class="study-icon">
+💡
+</div>
+
+<h3>
+Discernimento Espiritual
+</h3>
+
+<p>
+Como examinar todas as coisas e permanecer fundamentado
+na verdade das Escrituras.
+</p>
+
+<a
+href="#"
+class="study-link"
+onclick="abrirEstudo('discernimento');return false">
+Abrir estudo →
+</a>
+
+</article>
+
+<article
+class="study-card reveal"
+data-category="santidade vida cristã">
+
+<div class="study-number">
+Estudo 06
+</div>
+
+<div class="study-icon">
+🔥
+</div>
+
+<h3>
+Santidade
+</h3>
+
+<p>
+Chamados para viver uma vida separada para Deus,
+segundo os princípios da Palavra.
+</p>
+
+<a
+href="#"
+class="study-link"
+onclick="abrirEstudo('santidade');return false">
+Abrir estudo →
+</a>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ESTUDO EM DESTAQUE -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="feature reveal">
+
+<div class="feature-symbol">
+🛡️
+</div>
+
+<div>
+
+<div class="feature-label">
+Estudo em destaque
+</div>
+
+<h2>
+Discernimento,<br>
+Preparação e Combate
+</h2>
+
+<p>
+“Fortalecei-vos no Senhor e na força do seu poder.”
+Efésios 6 apresenta a realidade da batalha espiritual
+e a necessidade de permanecer firmes em Deus.
+</p>
+
+<div class="feature-list">
+
+<div class="feature-item">
+✓ Discernimento espiritual
+</div>
+
+<div class="feature-item">
+✓ Armadura de Deus
+</div>
+
+<div class="feature-item">
+✓ Resistência espiritual
+</div>
+
+<div class="feature-item">
+✓ Palavra e oração
+</div>
+
+</div>
+
+<a
+href="#"
+class="btn btn-primary"
+onclick="abrirEstudo('batalha');return false">
+Continuar estudo
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROPÓSITO -->
+
+<section class="purpose">
+
+<div class="container">
+
+<div class="purpose-mark">
+“
+</div>
+
+<h2>
+“Procura apresentar-te a Deus aprovado,
+como obreiro que não tem de que se envergonhar,
+que maneja bem a palavra da verdade.”
+</h2>
+
+<p>
+2 Timóteo 2:15. O propósito deste espaço é incentivar
+o estudo responsável das Escrituras, fortalecendo a fé
+e promovendo crescimento através da Palavra de Deus.
+</p>
+
+</div>
+
+</section>
+
+<!-- SOBRE -->
+
+<section class="section" id="sobre">
+
+<div class="container">
+
+<div class="section-label">
+Ministério
+</div>
+
+<h2 class="section-title">
+Quem conduz
+</h2>
+
+<p class="section-description">
+Um espaço preparado para ensino, reflexão e edificação através das Escrituras.
+</p>
+
+<div class="authors">
+
+<div class="author reveal">
+
+<div class="author-icon">
+📖
+</div>
+
+<h3>
+Bispo Emanuel
+</h3>
+
+<p>
+Ensino, orientação e exposição da Palavra de Deus,
+com foco na edificação e crescimento espiritual.
+</p>
+
+</div>
+
+<div class="author reveal">
+
+<div class="author-icon">
+🌿
+</div>
+
+<h3>
+Missionária Ariane
+</h3>
+
+<p>
+Ensino, discipulado e apoio à caminhada cristã,
+com dedicação à Palavra e à edificação da Igreja.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FINAL -->
+
+<section class="final">
+
+<div class="final-content">
+
+<div class="final-symbol">
+📖
+</div>
+
+<h2>
+Conheça a Palavra.
+<span>Viva a Palavra.</span>
+</h2>
+
+<p>
+Que cada estudo seja uma oportunidade para crescer,
+amadurecer na fé e conhecer cada vez mais as Escrituras.
+</p>
+
+<a
+href="#estudos"
+class="btn btn-gold">
+Começar um estudo
+</a>
+
+<div class="signature">
+Bispo Emanuel e Missionária Ariane
+</div>
+
+<div class="footer">
+Estudos Bíblicos • Palavra • Fé • Edificação
+</div>
+
+</div>
+
+</section>
+
+<!-- MODAL -->
+
+<div
+class="modal"
+id="studyModal"
+onclick="fecharModal(event)">
+
+<div class="modal-content">
+
+<button
+class="modal-close"
+onclick="fecharModal()">
+×
+</button>
+
+<h2 id="modalTitle">
+Estudo Bíblico
+</h2>
+
+<p id="modalDescription">
+</p>
+
+<div
+class="verse"
+id="modalVerse">
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* =========================
+   DADOS DOS ESTUDOS
+========================= */
+
+const estudos={
+
+batalha:{
+titulo:"Batalha Espiritual",
+descricao:"A batalha espiritual deve ser compreendida à luz das Escrituras. Efésios 6:10–18 apresenta o chamado para permanecer firme no Senhor, utilizando a armadura de Deus e perseverando em oração.",
+versiculo:"“No demais, irmãos meus, fortalecei-vos no Senhor e na força do seu poder.” — Efésios 6:10"
+},
+
+libertacao:{
+titulo:"Libertação",
+descricao:"A liberdade cristã está relacionada à obra de Cristo, ao arrependimento, à fé e a uma vida de obediência a Deus. O estudo deve sempre permanecer fundamentado nas Escrituras.",
+versiculo:"“Se, pois, o Filho vos libertar, verdadeiramente sereis livres.” — João 8:36"
+},
+
+fe:{
+titulo:"Fé como um Grão",
+descricao:"Jesus utilizou o grão de mostarda como exemplo para ensinar sobre a fé. A vida cristã é marcada pela confiança em Deus e pela perseverança diante das circunstâncias.",
+versiculo:"“Se tiverdes fé como um grão de mostarda...” — Mateus 17:20"
+},
+
+oracao:{
+titulo:"Vida de Oração",
+descricao:"A oração é uma prática fundamental da caminhada cristã. A Bíblia apresenta a oração como expressão de comunhão, dependência, gratidão, súplica e intercessão diante de Deus.",
+versiculo:"“Orai sem cessar.” — 1 Tessalonicenses 5:17"
+},
+
+discernimento:{
+titulo:"Discernimento Espiritual",
+descricao:"O discernimento bíblico envolve examinar aquilo que ouvimos e vivemos à luz da Palavra de Deus. O cristão é chamado a provar todas as coisas e permanecer na verdade.",
+versiculo:"“Examinai tudo. Retende o bem.” — 1 Tessalonicenses 5:21"
+},
+
+santidade:{
+titulo:"Santidade",
+descricao:"A santidade é um chamado bíblico para uma vida dedicada a Deus. Ela envolve transformação, obediência e separação do pecado, tendo Cristo como referência.",
+versiculo:"“Sede santos, porque eu sou santo.” — 1 Pedro 1:16"
 }
 
-atualizarContador();
-setInterval(atualizarContador,1000);
+};
 
-let coracoes=0;
-const limite=8;
+/* =========================
+   MODAL
+========================= */
 
-function criarCoracao(){
-if(coracoes>=limite)return;
+function abrirEstudo(nome){
+
+const estudo=estudos[nome];
+
+if(!estudo)return;
+
+document.getElementById("modalTitle").textContent=estudo.titulo;
+
+document.getElementById("modalDescription").textContent=estudo.descricao;
+
+document.getElementById("modalVerse").textContent=estudo.versiculo;
+
+document.getElementById("studyModal").classList.add("active");
+
+document.body.style.overflow="hidden";
+}
+
+function fecharModal(event){
+
+if(event && event.target!==document.getElementById("studyModal")){
+return;
+}
+
+document.getElementById("studyModal").classList.remove("active");
+
+document.body.style.overflow="";
+}
+
+/* =========================
+   BUSCA
+========================= */
+
+function buscarEstudos(){
+
+const termo=document
+.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
+
+const cards=document.querySelectorAll(".study-card");
+
+cards.forEach(card=>{
+
+const texto=card.textContent.toLowerCase();
+
+if(!termo || texto.includes(termo)){
+card.style.display="";
+}else{
+card.style.display="none";
+}
+
+});
+
+document
+.getElementById("estudos")
+.scrollIntoView({
+behavior:"smooth"
+});
+}
+
+document
+.getElementById("searchInput")
+.addEventListener("keydown",function(e){
+
+if(e.key==="Enter"){
+buscarEstudos();
+}
+
+});
+
+/* =========================
+   FILTRO
+========================= */
+
+function filtrarCategoria(categoria){
+
+const cards=document.querySelectorAll(".study-card");
+
+cards.forEach(card=>{
+
+const categorias=card
+.getAttribute("data-category")
+.toLowerCase();
+
+if(categorias.includes(categoria.toLowerCase())){
+card.style.display="";
+}else{
+card.style.display="none";
+}
+
+});
+
+document
+.getElementById("estudos")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+/* =========================
+   REVELAÇÃO
+========================= */
+
+const observer=new IntersectionObserver(
+entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+observer.unobserve(entry.target);
+}
+
+});
+
+},
+{
+threshold:.12
+}
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(element=>{
+observer.observe(element);
+});
+
+/* =========================
+   PARTÍCULAS
+========================= */
+
+let particles=0;
+const maxParticles=7;
+
+function criarParticula(){
+
+if(particles>=maxParticles)return;
 
 const el=document.createElement("div");
-el.className="floating-heart";
-el.textContent=["❤️","💕","💗","💖"][Math.floor(Math.random()*4)];
+
+el.className="particle";
+
+el.textContent=[
+"✦",
+"✧",
+"·",
+"✦"
+][Math.floor(Math.random()*4)];
+
 el.style.left=Math.random()*100+"vw";
-el.style.fontSize=12+Math.random()*12+"px";
-el.style.animationDuration=6+Math.random()*3+"s";
+
+el.style.fontSize=
+8+Math.random()*10+"px";
+
+el.style.animationDuration=
+7+Math.random()*4+"s";
+
 document.body.appendChild(el);
-coracoes++;
+
+particles++;
 
 setTimeout(()=>{
+
 el.remove();
-coracoes--;
-},9500);
+particles--;
+
+},11000);
+
 }
 
-setInterval(criarCoracao,2200);
-</script></body>
+setInterval(criarParticula,1800);
+
+/* =========================
+   ESC
+========================= */
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Escape"){
+fecharModal();
+}
+
+});
+
+</script>
+
+</body>
 </html>
