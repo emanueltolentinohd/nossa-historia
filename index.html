@@ -1,1384 +1,1013 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#06101d">
-<meta name="description" content="Bíblia Digital e Estudos Bíblicos — Bispo Emanuel e Missionária Ariane">
-<title>Bíblia Digital | Bispo Emanuel e Missionária Ariane</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
-
-<style>
-:root{
---bg:#050b13;
---bg2:#091523;
---bg3:#0d1d30;
---blue:#2675ff;
---blue2:#1649b7;
---gold:#d6ad58;
---gold2:#f1d48e;
---white:#fff;
---text:#edf4ff;
---muted:#9aaabd;
---line:rgba(255,255,255,.11);
---card:rgba(255,255,255,.055);
---card2:rgba(255,255,255,.08);
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box
-}
-
-html{
-scroll-behavior:smooth
-}
-
-body{
-font-family:Inter,Arial,sans-serif;
-background:var(--bg);
-color:var(--text);
-overflow-x:hidden
-}
-
-button,
-input,
-select{
-font:inherit
-}
-
-button,
-a{
--webkit-tap-highlight-color:transparent
-}
-
-::selection{
-background:var(--gold);
-color:#08101b
-}
-
-/* FUNDO */
-
-.background{
-position:fixed;
-inset:0;
-z-index:-10;
-overflow:hidden;
-background:
-radial-gradient(circle at 50% 10%,#18355b 0,#0a1728 34%,#04080e 78%)
-}
-
-.background:before{
-content:"";
-position:absolute;
-inset:0;
-background:
-linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),
-linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);
-background-size:55px 55px
-}
-
-.orb{
-position:absolute;
-border-radius:50%;
-filter:blur(100px);
-pointer-events:none
-}
-
-.orb1{
-width:430px;
-height:430px;
-background:#1460ff;
-left:-180px;
-top:-180px;
-opacity:.18
-}
-
-.orb2{
-width:500px;
-height:500px;
-background:#b78631;
-right:-250px;
-top:35%;
-opacity:.11
-}
-
-/* NAV */
-
-.nav{
-position:fixed;
-top:0;
-left:0;
-right:0;
-height:72px;
-z-index:1000;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 6%;
-background:linear-gradient(180deg,rgba(3,8,15,.94),rgba(3,8,15,.5),transparent);
-backdrop-filter:blur(14px);
--webkit-backdrop-filter:blur(14px)
-}
-
-.logo{
-font-family:Parisienne,cursive;
-font-size:30px;
-color:var(--gold2);
-text-decoration:none
-}
-
-.nav-links{
-display:flex;
-gap:26px
-}
-
-.nav-links a{
-font-size:12px;
-color:#dbe6f4;
-text-decoration:none;
-opacity:.8;
-transition:.3s
-}
-
-.nav-links a:hover{
-color:var(--gold2);
-opacity:1
-}
-
-/* HERO */
-
-.hero{
-min-height:100svh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:120px 20px 80px
-}
-
-.hero-content{
-width:min(950px,100%);
-animation:entrada 1s ease both
-}
-
-.eyebrow{
-font-size:10px;
-text-transform:uppercase;
-letter-spacing:4px;
-color:var(--gold2);
-margin-bottom:25px
-}
-
-.book-icon{
-font-size:65px;
-margin-bottom:22px;
-filter:drop-shadow(0 0 30px rgba(215,173,85,.2))
-}
-
-.hero h1{
-font-family:"DM Serif Display",serif;
-font-weight:400;
-font-size:clamp(3.5rem,10vw,8rem);
-line-height:.92;
-letter-spacing:-3px
-}
-
-.hero h1 span{
-display:block;
-color:var(--gold2)
-}
-
-.hero-text{
-max-width:700px;
-margin:30px auto 0;
-color:var(--muted);
-font-size:15px;
-line-height:1.9
-}
-
-.hero-buttons{
-display:flex;
-justify-content:center;
-gap:12px;
-flex-wrap:wrap;
-margin-top:40px
-}
-
-.btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:8px;
-padding:15px 24px;
-border-radius:100px;
-border:1px solid var(--line);
-text-decoration:none;
-font-size:12px;
-font-weight:600;
-cursor:pointer;
-transition:.35s
-}
-
-.btn-primary{
-background:linear-gradient(135deg,var(--blue),var(--blue2));
-color:#fff;
-box-shadow:0 15px 40px rgba(38,117,255,.22)
-}
-
-.btn-primary:hover{
-transform:translateY(-4px);
-box-shadow:0 20px 50px rgba(38,117,255,.35)
-}
-
-.btn-gold{
-background:linear-gradient(135deg,#e3bd6a,#a97929);
-color:#101721;
-box-shadow:0 15px 40px rgba(215,173,85,.15)
-}
-
-.btn-gold:hover{
-transform:translateY(-4px)
-}
-
-.btn-outline{
-background:rgba(255,255,255,.04);
-color:#fff
-}
-
-.btn-outline:hover{
-background:rgba(255,255,255,.08)
-}
-
-/* SEÇÕES */
-
-.section{
-padding:110px 20px
-}
-
-.container{
-width:min(1120px,100%);
-margin:auto
-}
-
-.section-label{
-text-align:center;
-color:var(--gold);
-font-size:9px;
-letter-spacing:4px;
-text-transform:uppercase;
-margin-bottom:15px
-}
-
-.section-title{
-font-family:"DM Serif Display",serif;
-font-weight:400;
-font-size:clamp(2.8rem,7vw,5rem);
-text-align:center;
-line-height:1
-}
-
-.section-description{
-max-width:650px;
-margin:20px auto 55px;
-text-align:center;
-font-size:14px;
-line-height:1.8;
-color:#8e9daf
-}
-
-/* LEITOR */
-
-.reader{
-border:1px solid var(--line);
-border-radius:32px;
-overflow:hidden;
-background:rgba(255,255,255,.045);
-box-shadow:0 30px 90px rgba(0,0,0,.3)
-}
-
-.reader-top{
-padding:22px;
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:12px;
-border-bottom:1px solid var(--line);
-background:rgba(0,0,0,.15)
-}
-
-.control{
-display:flex;
-flex-direction:column;
-gap:7px
-}
-
-.control label{
-font-size:9px;
-text-transform:uppercase;
-letter-spacing:2px;
-color:#788a9e
-}
-
-.control select{
-width:100%;
-padding:13px 14px;
-border:1px solid var(--line);
-border-radius:13px;
-outline:none;
-background:#0c1929;
-color:#fff;
-cursor:pointer
-}
-
-.reader-body{
-padding:55px
-}
-
-.reader-header{
-text-align:center;
-margin-bottom:45px
-}
-
-.translation{
-font-size:9px;
-letter-spacing:3px;
-text-transform:uppercase;
-color:var(--gold)
-}
-
-.reader-title{
-font-family:"DM Serif Display",serif;
-font-size:clamp(2.4rem,6vw,4.5rem);
-font-weight:400;
-margin-top:10px
-}
-
-.reader-subtitle{
-font-size:12px;
-color:#8192a6;
-margin-top:10px
-}
-
-.bible-text{
-max-width:850px;
-margin:auto;
-font-family:"DM Serif Display",serif;
-font-size:21px;
-line-height:2;
-color:#e8eef7
-}
-
-.bible-text p{
-margin-bottom:24px
-}
-
-.verse{
-display:block;
-position:relative;
-padding-left:45px
-}
-
-.verse-number{
-position:absolute;
-left:0;
-top:4px;
-font-family:Inter,sans-serif;
-font-size:10px;
-font-weight:700;
-color:var(--gold);
-background:rgba(215,173,85,.08);
-border:1px solid rgba(215,173,85,.15);
-border-radius:7px;
-padding:3px 5px
-}
-
-.reader-footer{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-padding:22px;
-border-top:1px solid var(--line)
-}
-
-.reader-info{
-font-size:10px;
-color:#718398
-}
-
-/* BUSCA */
-
-.search{
-margin-bottom:30px
-}
-
-.search-box{
-display:flex;
-gap:8px;
-padding:7px;
-border:1px solid var(--line);
-border-radius:100px;
-background:rgba(255,255,255,.04)
-}
-
-.search-box input{
-flex:1;
-min-width:0;
-border:0;
-outline:0;
-background:transparent;
-color:#fff;
-padding:10px 15px
-}
-
-.search-box input::placeholder{
-color:#718297
-}
-
-.search-box button{
-border:0;
-border-radius:100px;
-padding:11px 20px;
-background:var(--gold);
-color:#111a24;
-font-size:11px;
-font-weight:700;
-cursor:pointer
-}
-
-/* CATEGORIAS */
-
-.category-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-margin-top:30px
-}
-
-.category{
-padding:27px 15px;
-text-align:center;
-border:1px solid var(--line);
-border-radius:22px;
-background:var(--card);
-cursor:pointer;
-transition:.35s
-}
-
-.category:hover{
-transform:translateY(-5px);
-border-color:rgba(215,173,85,.3);
-background:var(--card2)
-}
-
-.category-icon{
-display:block;
-font-size:28px;
-margin-bottom:12px
-}
-
-.category strong{
-display:block;
-font-size:12px
-}
-
-.category span{
-display:block;
-margin-top:5px;
-font-size:9px;
-color:#718297
-}
-
-/* DESTAQUE */
-
-.highlight{
-margin-top:60px;
-display:grid;
-grid-template-columns:280px 1fr;
-gap:45px;
-align-items:center;
-padding:45px;
-border:1px solid rgba(215,173,85,.18);
-border-radius:30px;
-background:
-radial-gradient(circle at 15% 50%,rgba(35,105,255,.12),transparent 45%),
-rgba(255,255,255,.035)
-}
-
-.highlight-icon{
-height:240px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:23px;
-background:rgba(215,173,85,.06);
-border:1px solid rgba(215,173,85,.15);
-font-size:90px
-}
-
-.highlight-label{
-font-size:9px;
-letter-spacing:3px;
-text-transform:uppercase;
-color:var(--gold)
-}
-
-.highlight h2{
-font-family:"DM Serif Display",serif;
-font-size:clamp(2.3rem,5vw,4rem);
-font-weight:400;
-line-height:1;
-margin:15px 0 20px
-}
-
-.highlight p{
-color:#91a0b2;
-font-size:13px;
-line-height:1.9;
-margin-bottom:25px
-}
-
-/* SOBRE */
-
-.authors{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px
-}
-
-.author{
-padding:35px;
-text-align:center;
-border:1px solid var(--line);
-border-radius:25px;
-background:var(--card)
-}
-
-.author-icon{
-width:68px;
-height:68px;
-display:flex;
-align-items:center;
-justify-content:center;
-margin:0 auto 18px;
-border-radius:50%;
-border:1px solid rgba(215,173,85,.2);
-background:rgba(215,173,85,.06);
-font-size:28px
-}
-
-.author h3{
-font-family:"DM Serif Display",serif;
-font-size:30px;
-font-weight:400
-}
-
-.author p{
-margin-top:10px;
-color:#8394a7;
-font-size:12px;
-line-height:1.8
-}
-
-/* FINAL */
-
-.final{
-min-height:70svh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:90px 20px;
-background:
-radial-gradient(circle at center,#152f51 0,#091522 48%,#04080e 80%)
-}
-
-.final-content{
-max-width:850px
-}
-
-.final-icon{
-font-size:55px;
-margin-bottom:25px
-}
-
-.final h2{
-font-family:"DM Serif Display",serif;
-font-size:clamp(3rem,8vw,7rem);
-font-weight:400;
-line-height:.95
-}
-
-.final h2 span{
-color:var(--gold2)
-}
-
-.final p{
-max-width:650px;
-margin:28px auto;
-color:#9aabbc;
-font-size:14px;
-line-height:1.9
-}
-
-.signature{
-font-family:Parisienne,cursive;
-font-size:38px;
-color:var(--gold2);
-margin-top:35px
-}
-
-.footer{
-margin-top:55px;
-font-size:9px;
-letter-spacing:2px;
-text-transform:uppercase;
-color:#5f7185
-}
-
-/* AVISO ARA */
-
-.notice{
-margin-top:18px;
-padding:14px 18px;
-border-radius:13px;
-background:rgba(215,173,85,.045);
-border:1px solid rgba(215,173,85,.12);
-color:#9eacbb;
-font-size:10px;
-line-height:1.6;
-text-align:center
-}
-
-/* ANIMAÇÃO */
-
-@keyframes entrada{
-from{
-opacity:0;
-transform:translateY(30px)
-}
-to{
-opacity:1;
-transform:none
-}
-}
-
-/* RESPONSIVO */
-
-@media(max-width:850px){
-
-.reader-top{
-grid-template-columns:1fr
-}
-
-.highlight{
-grid-template-columns:1fr
-}
-
-.highlight-icon{
-height:190px
-}
-
-.category-grid{
-grid-template-columns:1fr 1fr
-}
-
-}
-
-@media(max-width:650px){
-
-.nav{
-height:62px;
-padding:0 20px
-}
-
-.logo{
-font-size:26px
-}
-
-.nav-links{
-gap:13px
-}
-
-.nav-links a:nth-child(1){
-display:none
-}
-
-.hero{
-padding:100px 18px 70px
-}
-
-.hero h1{
-letter-spacing:-1px
-}
-
-.hero-text{
-font-size:13px
-}
-
-.section{
-padding:80px 15px
-}
-
-.reader{
-border-radius:24px
-}
-
-.reader-body{
-padding:32px 20px
-}
-
-.bible-text{
-font-size:19px;
-line-height:1.9
-}
-
-.reader-footer{
-flex-direction:column
-}
-
-.category-grid{
-grid-template-columns:1fr 1fr;
-gap:9px
-}
-
-.highlight{
-padding:28px;
-border-radius:25px
-}
-
-.authors{
-grid-template-columns:1fr
-}
-
-}
-
-@media(prefers-reduced-motion:reduce){
-
-*{
-scroll-behavior:auto!important;
-animation:none!important;
-transition:none!important
-}
-
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#06101d">
+  <meta name="description" content="Bíblia Digital e Estudos Bíblicos — Bispo Emanuel e Missionária Ariane. Leia a Palavra e conheça a verdade.">
+  <title>Bíblia Digital | Bispo Emanuel e Missionária Ariane</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       VARIABLES & RESET
+       ========================================================================== */
+    :root {
+      --bg: #050b13;
+      --bg2: #091523;
+      --bg3: #0d1d30;
+      --blue: #2675ff;
+      --blue2: #1649b7;
+      --gold: #d6ad58;
+      --gold2: #f1d48e;
+      --white: #fff;
+      --text: #edf4ff;
+      --muted: #9aaabd;
+      --line: rgba(255,255,255,.11);
+      --card: rgba(255,255,255,.055);
+      --card2: rgba(255,255,255,.08);
+      --nav-height: 72px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      /* Evita que âncoras fiquem escondidas atrás do menu fixo */
+      scroll-padding-top: var(--nav-height); 
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Acessibilidade: Foco visível para navegação por teclado */
+    *:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: #08101b;
+    }
+
+    /* ==========================================================================
+       BACKGROUND EFFECTS
+       ========================================================================== */
+    .background {
+      position: fixed;
+      inset: 0;
+      z-index: -10;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 10%, #18355b 0, #0a1728 34%, #04080e 78%);
+    }
+
+    .background:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(rgba(255,255,255,.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px);
+      background-size: 55px 55px;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    .orb1 {
+      width: 430px; height: 430px;
+      background: #1460ff;
+      left: -180px; top: -180px;
+      opacity: .18;
+    }
+
+    .orb2 {
+      width: 500px; height: 500px;
+      background: #b78631;
+      right: -250px; top: 35%;
+      opacity: .11;
+    }
+
+    /* ==========================================================================
+       NAVIGATION
+       ========================================================================== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-height);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: linear-gradient(180deg, rgba(3,8,15,.94), rgba(3,8,15,.5), transparent);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .logo {
+      font-family: 'Parisienne', cursive;
+      font-size: 30px;
+      color: var(--gold2);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      color: #dbe6f4;
+      text-decoration: none;
+      opacity: .8;
+      transition: color 0.3s, opacity 0.3s;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold2);
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 80px;
+    }
+
+    .hero-content {
+      width: min(950px, 100%);
+      animation: entrada 1s ease both;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--gold2);
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .book-icon {
+      font-size: 65px;
+      margin-bottom: 22px;
+      filter: drop-shadow(0 0 30px rgba(215,173,85,.2));
+    }
+
+    .hero h1 {
+      font-family: "DM Serif Display", serif;
+      font-weight: 400;
+      font-size: clamp(3.5rem, 10vw, 8rem);
+      line-height: .92;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--gold2);
+    }
+
+    .hero-text {
+      max-width: 700px;
+      margin: 30px auto 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 24px;
+      border-radius: 100px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      will-change: transform;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue2));
+      color: #fff;
+      box-shadow: 0 15px 40px rgba(38,117,255,.22);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(38,117,255,.35);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #e3bd6a, #a97929);
+      color: #101721;
+      box-shadow: 0 15px 40px rgba(215,173,85,.15);
+      border: none;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-4px);
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,.04);
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.08);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
+    /* ==========================================================================
+       LAYOUT UTILS & SECTIONS
+       ========================================================================== */
+    .section {
+      padding: 110px 20px;
+    }
+
+    .container {
+      width: min(1120px, 100%);
+      margin: auto;
+    }
+
+    .section-label {
+      text-align: center;
+      color: var(--gold);
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-family: "DM Serif Display", serif;
+      font-weight: 400;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      text-align: center;
+      line-height: 1;
+    }
+
+    .section-description {
+      max-width: 650px;
+      margin: 20px auto 55px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #8e9daf;
+    }
+
+    /* ==========================================================================
+       BIBLE READER
+       ========================================================================== */
+    .reader {
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      overflow: hidden;
+      background: rgba(255,255,255,.045);
+      box-shadow: 0 30px 90px rgba(0,0,0,.3);
+    }
+
+    .reader-top {
+      padding: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(0,0,0,.15);
+    }
+
+    .control {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .control label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #788a9e;
+      font-weight: 600;
+    }
+
+    .control select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      outline: none;
+      background: #0c1929;
+      color: #fff;
+      cursor: pointer;
+      appearance: none; /* Moderniza o visual removendo a seta padrão em alguns SOs, se desejar */
+    }
+
+    .reader-body {
+      padding: 55px;
+    }
+
+    .reader-header {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .translation {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .reader-title {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    .reader-subtitle {
+      font-size: 12px;
+      color: #8192a6;
+      margin-top: 10px;
+    }
+
+    .bible-text {
+      max-width: 850px;
+      margin: auto;
+      font-family: "DM Serif Display", serif;
+      font-size: 21px;
+      line-height: 2;
+      color: #e8eef7;
+    }
+
+    .bible-text p {
+      margin-bottom: 24px;
+    }
+
+    .verse {
+      display: block;
+      position: relative;
+      padding-left: 45px;
+    }
+
+    .verse-number {
+      position: absolute;
+      left: 0;
+      top: 4px;
+      font-family: Inter, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--gold);
+      background: rgba(215,173,85,.08);
+      border: 1px solid rgba(215,173,85,.15);
+      border-radius: 7px;
+      padding: 3px 5px;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .reader-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .reader-info {
+      font-size: 10px;
+      color: #718398;
+    }
+
+    .reader-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .notice {
+      margin-top: 18px;
+      padding: 14px 18px;
+      border-radius: 13px;
+      background: rgba(215,173,85,.045);
+      border: 1px solid rgba(215,173,85,.12);
+      color: #9eacbb;
+      font-size: 10px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       STUDIES CATEGORIES & HIGHLIGHT
+       ========================================================================== */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .category {
+      padding: 27px 15px;
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+      cursor: pointer;
+      transition: transform 0.35s, border-color 0.35s, background 0.35s;
+    }
+
+    .category:hover {
+      transform: translateY(-5px);
+      border-color: rgba(215,173,85,.3);
+      background: var(--card2);
+    }
+
+    .category-icon {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .category strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .category span {
+      display: block;
+      margin-top: 5px;
+      font-size: 9px;
+      color: #718297;
+    }
+
+    .highlight {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 45px;
+      align-items: center;
+      padding: 45px;
+      border: 1px solid rgba(215,173,85,.18);
+      border-radius: 30px;
+      background: 
+        radial-gradient(circle at 15% 50%, rgba(35,105,255,.12), transparent 45%),
+        rgba(255,255,255,.035);
+    }
+
+    .highlight-icon {
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 23px;
+      background: rgba(215,173,85,.06);
+      border: 1px solid rgba(215,173,85,.15);
+      font-size: 90px;
+    }
+
+    .highlight-label {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .highlight h3 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      font-weight: 400;
+      line-height: 1;
+      margin: 15px 0 20px;
+    }
+
+    .highlight p {
+      color: #91a0b2;
+      font-size: 13px;
+      line-height: 1.9;
+      margin-bottom: 25px;
+    }
+
+    /* ==========================================================================
+       ABOUT AUTHORS
+       ========================================================================== */
+    .authors {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .author {
+      padding: 35px;
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 25px;
+      background: var(--card);
+    }
+
+    .author-icon {
+      width: 68px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      border: 1px solid rgba(215,173,85,.2);
+      background: rgba(215,173,85,.06);
+      font-size: 28px;
+    }
+
+    .author h3 {
+      font-family: "DM Serif Display", serif;
+      font-size: 30px;
+      font-weight: 400;
+    }
+
+    .author p {
+      margin-top: 10px;
+      color: #8394a7;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* ==========================================================================
+       FOOTER / FINAL
+       ========================================================================== */
+    .final {
+      min-height: 70svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 90px 20px;
+      background: radial-gradient(circle at center, #152f51 0, #091522 48%, #04080e 80%);
+    }
+
+    .final-content {
+      max-width: 850px;
+    }
+
+    .final-icon {
+      font-size: 55px;
+      margin-bottom: 25px;
+    }
+
+    .final h2 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 400;
+      line-height: .95;
+    }
+
+    .final h2 span {
+      color: var(--gold2);
+    }
+
+    .final p {
+      max-width: 650px;
+      margin: 28px auto;
+      color: #9aabbc;
+      font-size: 14px;
+      line-height: 1.9;
+      font-style: italic;
+    }
+
+    .signature {
+      font-family: 'Parisienne', cursive;
+      font-size: 38px;
+      color: var(--gold2);
+      margin-top: 35px;
+    }
+
+    .footer {
+      margin-top: 55px;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #5f7185;
+    }
+
+    /* ==========================================================================
+       ANIMATIONS
+       ========================================================================== */
+    @keyframes entrada {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    /* ==========================================================================
+       MEDIA QUERIES
+       ========================================================================== */
+    @media(max-width: 850px) {
+      .reader-top { grid-template-columns: 1fr; }
+      .highlight { grid-template-columns: 1fr; }
+      .highlight-icon { height: 190px; }
+      .category-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media(max-width: 650px) {
+      .nav { height: 62px; padding: 0 20px; }
+      html { scroll-padding-top: 62px; }
+      .logo { font-size: 26px; }
+      .nav-links { gap: 13px; }
+      .nav-links a:nth-child(1) { display: none; }
+      .hero { padding: 100px 18px 70px; }
+      .hero h1 { letter-spacing: -1px; }
+      .hero-text { font-size: 13px; }
+      .section { padding: 80px 15px; }
+      .reader { border-radius: 24px; }
+      .reader-body { padding: 32px 20px; }
+      .bible-text { font-size: 19px; line-height: 1.9; }
+      .reader-footer { flex-direction: column; text-align: center; }
+      .reader-actions { width: 100%; justify-content: space-between; }
+      .category-grid { grid-template-columns: 1fr 1fr; gap: 9px; }
+      .highlight { padding: 28px; border-radius: 25px; }
+      .authors { grid-template-columns: 1fr; }
+    }
+
+    @media(prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="background">
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
-</div>
-
-<nav class="nav">
-
-<a href="#" class="logo">
-Bíblia
-</a>
-
-<div class="nav-links">
-<a href="#biblia">Bíblia</a>
-<a href="#estudos">Estudos</a>
-<a href="#sobre">Sobre</a>
-</div>
-
-</nav>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-content">
-
-<div class="eyebrow">
-Palavra • Fé • Conhecimento
-</div>
-
-<div class="book-icon">
-📖
-</div>
-
-<h1>
-Leia a Palavra.
-<span>Conheça a Verdade.</span>
-</h1>
-
-<p class="hero-text">
-Uma Bíblia digital criada para leitura, estudo e edificação,
-com uma experiência moderna e dedicada à Palavra de Deus.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#biblia" class="btn btn-gold">
-📖 Abrir Bíblia
-</a>
-
-<a href="#estudos" class="btn btn-outline">
-Estudos Bíblicos
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- BÍBLIA -->
-
-<section class="section" id="biblia">
-
-<div class="container">
-
-<div class="section-label">
-Bíblia Digital
-</div>
-
-<h2 class="section-title">
-Escolha sua Bíblia
-</h2>
-
-<p class="section-description">
-Selecione a tradução, o livro e o capítulo que deseja ler.
-</p>
-
-<div class="reader">
-
-<div class="reader-top">
-
-<div class="control">
-
-<label>
-Tradução
-</label>
-
-<select id="translation">
-
-<option value="ARA">
-ARA — Almeida Revista e Atualizada
-</option>
-
-<option value="ARC">
-ARC — Almeida Revista e Corrigida
-</option>
-
-<option value="ACF">
-ACF — Almeida Corrigida e Fiel
-</option>
-
-<option value="NAA">
-NAA — Nova Almeida Atualizada
-</option>
-
-</select>
-
-</div>
-
-<div class="control">
-
-<label>
-Livro
-</label>
-
-<select id="book">
-
-<option>Gênesis</option>
-<option>Êxodo</option>
-<option>Levítico</option>
-<option>Números</option>
-<option>Deuteronômio</option>
-<option>Josué</option>
-<option>Juízes</option>
-<option>Rute</option>
-<option>1 Samuel</option>
-<option>2 Samuel</option>
-<option>1 Reis</option>
-<option>2 Reis</option>
-<option>1 Crônicas</option>
-<option>2 Crônicas</option>
-<option>Esdras</option>
-<option>Neemias</option>
-<option>Ester</option>
-<option>Jó</option>
-<option>Salmos</option>
-<option>Provérbios</option>
-<option>Eclesiastes</option>
-<option>Cânticos</option>
-<option>Isaías</option>
-<option>Jeremias</option>
-<option>Lamentações</option>
-<option>Ezequiel</option>
-<option>Daniel</option>
-<option>Oseias</option>
-<option>Joel</option>
-<option>Amós</option>
-<option>Obadias</option>
-<option>Jonas</option>
-<option>Miqueias</option>
-<option>Naum</option>
-<option>Habacuque</option>
-<option>Sofonias</option>
-<option>Ageu</option>
-<option>Zacarias</option>
-<option>Malaquias</option>
-<option>Mateus</option>
-<option>Marcos</option>
-<option>Lucas</option>
-<option>João</option>
-<option>Atos</option>
-<option>Romanos</option>
-<option>1 Coríntios</option>
-<option>2 Coríntios</option>
-<option>Gálatas</option>
-<option>Efésios</option>
-<option>Filipenses</option>
-<option>Colossenses</option>
-<option>1 Tessalonicenses</option>
-<option>2 Tessalonicenses</option>
-<option>1 Timóteo</option>
-<option>2 Timóteo</option>
-<option>Tito</option>
-<option>Filemom</option>
-<option>Hebreus</option>
-<option>Tiago</option>
-<option>1 Pedro</option>
-<option>2 Pedro</option>
-<option>1 João</option>
-<option>2 João</option>
-<option>3 João</option>
-<option>Judas</option>
-<option>Apocalipse</option>
-
-</select>
-
-</div>
-
-<div class="control">
-
-<label>
-Capítulo
-</label>
-
-<select id="chapter">
-
-<option>1</option>
-<option>2</option>
-<option>3</option>
-<option>4</option>
-<option>5</option>
-<option>6</option>
-<option>7</option>
-<option>8</option>
-<option>9</option>
-<option>10</option>
-<option>11</option>
-<option>12</option>
-<option>13</option>
-<option>14</option>
-<option>15</option>
-<option>16</option>
-<option>17</option>
-<option>18</option>
-<option>19</option>
-<option>20</option>
-
-</select>
-
-</div>
-
-</div>
-
-<div class="reader-body">
-
-<div class="reader-header">
-
-<div class="translation" id="translationName">
-ARA — Almeida Revista e Atualizada
-</div>
-
-<h2 class="reader-title" id="readerTitle">
-Gênesis 1
-</h2>
-
-<div class="reader-subtitle">
-Leitura bíblica
-</div>
-
-</div>
-
-<div class="bible-text" id="bibleText">
-
-<p>
-<span class="verse">
-<span class="verse-number">1</span>
-Selecione a tradução, o livro e o capítulo acima para iniciar a leitura.
-</span>
-</p>
-
-<p>
-<span class="verse">
-<span class="verse-number">2</span>
-O conteúdo da Bíblia será carregado aqui através da fonte bíblica configurada no sistema.
-</span>
-</p>
-
-</div>
-
-</div>
-
-<div class="reader-footer">
-
-<span class="reader-info">
-📖 Leitura digital
-</span>
-
-<div>
-
-<button
-class="btn btn-outline"
-onclick="capituloAnterior()">
-← Anterior
-</button>
-
-<button
-class="btn btn-primary"
-onclick="proximoCapitulo()">
-Próximo →
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="notice">
-
-<strong>ARA:</strong>
-A Almeida Revista e Atualizada é uma tradução protegida por direitos autorais.
-Para uso público do texto integral, utilize uma fonte/licença autorizada.
-</div>
-
-</div>
-
-</section>
-
-<!-- ESTUDOS -->
-
-<section class="section" id="estudos">
-
-<div class="container">
-
-<div class="section-label">
-Estudo da Palavra
-</div>
-
-<h2 class="section-title">
-Estudos Bíblicos
-</h2>
-
-<p class="section-description">
-Aprofunde sua compreensão das Escrituras através de estudos organizados por temas.
-</p>
-
-<div class="category-grid">
-
-<div class="category">
-<span class="category-icon">⚔️</span>
-<strong>Batalha Espiritual</strong>
-<span>Efésios 6</span>
-</div>
-
-<div class="category">
-<span class="category-icon">🙏</span>
-<strong>Oração</strong>
-<span>Comunhão com Deus</span>
-</div>
-
-<div class="category">
-<span class="category-icon">🔓</span>
-<strong>Libertação</strong>
-<span>Vida cristã</span>
-</div>
-
-<div class="category">
-<span class="category-icon">🌱</span>
-<strong>Fé</strong>
-<span>Confiança em Deus</span>
-</div>
-
-</div>
-
-<div class="highlight">
-
-<div class="highlight-icon">
-🛡️
-</div>
-
-<div>
-
-<div class="highlight-label">
-Estudo em destaque
-</div>
-
-<h2>
-Discernimento,
-Preparação e Combate
-</h2>
-
-<p>
-Um estudo baseado principalmente em Efésios 6:10–18,
-abordando a necessidade de permanecer firme no Senhor,
-conhecer a Palavra e viver uma vida de oração.
-</p>
-
-<a href="#" class="btn btn-primary">
-Abrir estudo
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SOBRE -->
-
-<section class="section" id="sobre">
-
-<div class="container">
-
-<div class="section-label">
-Ministério
-</div>
-
-<h2 class="section-title">
-Estudos e Palavra
-</h2>
-
-<p class="section-description">
-Conteúdo preparado para leitura, ensino e edificação.
-</p>
-
-<div class="authors">
-
-<div class="author">
-
-<div class="author-icon">
-📖
-</div>
-
-<h3>
-Bispo Emanuel
-</h3>
-
-<p>
-Ensino e exposição das Escrituras,
-com foco na edificação e crescimento espiritual.
-</p>
-
-</div>
-
-<div class="author">
-
-<div class="author-icon">
-🌿
-</div>
-
-<h3>
-Missionária Ariane
-</h3>
-
-<p>
-Ensino, discipulado e dedicação à Palavra
-para fortalecimento da caminhada cristã.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FINAL -->
-
-<section class="final">
-
-<div class="final-content">
-
-<div class="final-icon">
-📖
-</div>
-
-<h2>
-Leia.
-<span>Estude.</span>
-Viva.
-</h2>
-
-<p>
-“Examinai as Escrituras, porque vós cuidais ter nelas a vida eterna,
-e são elas que de mim testificam.”
-</p>
-
-<div class="signature">
-Bispo Emanuel e Missionária Ariane
-</div>
-
-<div class="footer">
-Bíblia Digital • Estudos Bíblicos • Palavra de Deus
-</div>
-
-</div>
-
-</section>
-
-<script>
-
-/*
-==================================================
-CONFIGURAÇÃO DA BÍBLIA
-==================================================
-
-O leitor está preparado para receber uma API
-ou uma base de dados bíblica licenciada.
-
-A ARA é protegida por direitos autorais.
-Não coloque uma cópia integral da ARA diretamente
-neste HTML sem a licença necessária.
-*/
-
-const translation=document.getElementById("translation");
-const book=document.getElementById("book");
-const chapter=document.getElementById("chapter");
-
-const translationName=document.getElementById("translationName");
-const readerTitle=document.getElementById("readerTitle");
-const bibleText=document.getElementById("bibleText");
-
-/*
-Nomes das traduções
-*/
-
-const translations={
-ARA:"ARA — Almeida Revista e Atualizada",
-ARC:"ARC — Almeida Revista e Corrigida",
-ACF:"ACF — Almeida Corrigida e Fiel",
-NAA:"NAA — Nova Almeida Atualizada"
-};
-
-/*
-Atualiza cabeçalho
-*/
-
-function atualizarLeitor(){
-
-const versao=translation.value;
-const livro=book.value;
-const cap=chapter.value;
-
-translationName.textContent=translations[versao];
-
-readerTitle.textContent=
-livro+" "+cap;
-
-bibleText.innerHTML=`
-
-<p>
-<span class="verse">
-<span class="verse-number">1</span>
-A leitura de <strong>${livro} ${cap}</strong>
-na tradução <strong>${translations[versao]}</strong>
-será carregada aqui pela fonte bíblica configurada.
-</span>
-</p>
-
-<p>
-<span class="verse">
-<span class="verse-number">2</span>
-Este leitor foi preparado para integração com uma
-API ou base de dados autorizada.
-</span>
-</p>
-
-`;
-
-}
-
-/*
-Eventos
-*/
-
-translation.addEventListener(
-"change",
-atualizarLeitor
-);
-
-book.addEventListener(
-"change",
-atualizarLeitor
-);
-
-chapter.addEventListener(
-"change",
-atualizarLeitor
-);
-
-/*
-Anterior
-*/
-
-function capituloAnterior(){
-
-let valor=parseInt(chapter.value);
-
-if(valor>1){
-chapter.value=valor-1;
-atualizarLeitor();
-window.scrollTo({
-top:document.getElementById("biblia").offsetTop-70,
-behavior:"smooth"
-});
-}
-
-}
-
-/*
-Próximo
-*/
-
-function proximoCapitulo(){
-
-let valor=parseInt(chapter.value);
-
-chapter.value=valor+1;
-
-atualizarLeitor();
-
-window.scrollTo({
-top:document.getElementById("biblia").offsetTop-70,
-behavior:"smooth"
-});
-
-}
-
-/*
-Inicialização
-*/
-
-atualizarLeitor();
-
-</script>
-
+  <div class="background" aria-hidden="true">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+  </div>
+
+  <header>
+    <nav class="nav" aria-label="Menu principal">
+      <a href="#" class="logo" aria-label="Ir para o início">Bíblia</a>
+      <div class="nav-links">
+        <a href="#biblia">Bíblia</a>
+        <a href="#estudos">Estudos</a>
+        <a href="#sobre">Sobre</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <div class="eyebrow" aria-hidden="true">Palavra • Fé • Conhecimento</div>
+        <div class="book-icon" aria-hidden="true">📖</div>
+        
+        <h1 id="hero-title">
+          Leia a Palavra.
+          <span>Conheça a Verdade.</span>
+        </h1>
+        
+        <p class="hero-text">
+          Uma Bíblia digital criada para leitura, estudo e edificação,
+          com uma experiência moderna e dedicada à Palavra de Deus.
+        </p>
+        
+        <div class="hero-buttons">
+          <a href="#biblia" class="btn btn-gold">📖 Abrir Bíblia</a>
+          <a href="#estudos" class="btn btn-outline">Estudos Bíblicos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BÍBLIA -->
+    <section class="section" id="biblia" aria-labelledby="biblia-title">
+      <div class="container">
+        <div class="section-label" aria-hidden="true">Bíblia Digital</div>
+        <h2 class="section-title" id="biblia-title">Escolha sua Bíblia</h2>
+        <p class="section-description">Selecione a tradução, o livro e o capítulo que deseja ler.</p>
+
+        <article class="reader" aria-label="Leitor da Bíblia">
+          <div class="reader-top">
+            <div class="control">
+              <label for="translation">Tradução</label>
+              <select id="translation">
+                <option value="ARA">ARA — Almeida Revista e Atualizada</option>
+                <option value="ARC">ARC — Almeida Revista e Corrigida</option>
+                <option value="ACF">ACF — Almeida Corrigida e Fiel</option>
+                <option value="NAA">NAA — Nova Almeida Atualizada</option>
+              </select>
+            </div>
+
+            <div class="control">
+              <label for="book">Livro</label>
+              <select id="book">
+                <option>Gênesis</option>
+                <option>Êxodo</option>
+                <!-- Demais livros omitidos por brevidade, adicione-os conforme necessário -->
+                <option>Salmos</option>
+                <option>Mateus</option>
+                <option>Apocalipse</option>
+              </select>
+            </div>
+
+            <div class="control">
+              <label for="chapter">Capítulo</label>
+              <select id="chapter">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <!-- Expanda dinamicamente no JS real ou adicione manualmente até 150 -->
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="reader-body">
+            <header class="reader-header">
+              <div class="translation" id="translationName">ARA — Almeida Revista e Atualizada</div>
+              <h2 class="reader-title" id="readerTitle">Gênesis 1</h2>
+              <div class="reader-subtitle">Leitura bíblica</div>
+            </header>
+
+            <div class="bible-text" id="bibleText" aria-live="polite">
+              <p>
+                <span class="verse">
+                  <span class="verse-number">1</span>
+                  Selecione a tradução, o livro e o capítulo acima para iniciar a leitura.
+                </span>
+              </p>
+              <p>
+                <span class="verse">
+                  <span class="verse-number">2</span>
+                  O conteúdo da Bíblia será carregado aqui através da fonte bíblica configurada no sistema.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div class="reader-footer">
+            <span class="reader-info" aria-hidden="true">📖 Leitura digital</span>
+            <div class="reader-actions">
+              <button class="btn btn-outline" id="btnPrev" aria-label="Capítulo Anterior" disabled>← Anterior</button>
+              <button class="btn btn-primary" id="btnNext" aria-label="Próximo Capítulo">Próximo →</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="notice" role="note">
+          <strong>Aviso de Direitos:</strong> A Almeida Revista e Atualizada é protegida por direitos autorais. Para uso público do texto integral, certifique-se de possuir a licença adequada.
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTUDOS -->
+    <section class="section" id="estudos" aria-labelledby="estudos-title">
+      <div class="container">
+        <div class="section-label" aria-hidden="true">Estudo da Palavra</div>
+        <h2 class="section-title" id="estudos-title">Estudos Bíblicos</h2>
+        <p class="section-description">Aprofunde sua compreensão das Escrituras através de estudos organizados por temas.</p>
+
+        <div class="category-grid">
+          <div class="category" role="button" tabindex="0" aria-label="Estudo Batalha Espiritual">
+            <span class="category-icon" aria-hidden="true">⚔️</span>
+            <strong>Batalha Espiritual</strong>
+            <span>Efésios 6</span>
+          </div>
+          <div class="category" role="button" tabindex="0" aria-label="Estudo Oração">
+            <span class="category-icon" aria-hidden="true">🙏</span>
+            <strong>Oração</strong>
+            <span>Comunhão com Deus</span>
+          </div>
+          <div class="category" role="button" tabindex="0" aria-label="Estudo Libertação">
+            <span class="category-icon" aria-hidden="true">🔓</span>
+            <strong>Libertação</strong>
+            <span>Vida cristã</span>
+          </div>
+          <div class="category" role="button" tabindex="0" aria-label="Estudo Fé">
+            <span class="category-icon" aria-hidden="true">🌱</span>
+            <strong>Fé</strong>
+            <span>Confiança em Deus</span>
+          </div>
+        </div>
+
+        <article class="highlight">
+          <div class="highlight-icon" aria-hidden="true">🛡️</div>
+          <div>
+            <div class="highlight-label">Estudo em destaque</div>
+            <h3>Discernimento, Preparação e Combate</h3>
+            <p>
+              Um estudo baseado principalmente em Efésios 6:10–18, abordando a necessidade de permanecer firme no Senhor, conhecer a Palavra e viver uma vida de oração.
+            </p>
+            <a href="#" class="btn btn-primary">Abrir estudo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section" id="sobre" aria-labelledby="sobre-title">
+      <div class="container">
+        <div class="section-label" aria-hidden="true">Ministério</div>
+        <h2 class="section-title" id="sobre-title">Estudos e Palavra</h2>
+        <p class="section-description">Conteúdo preparado para leitura, ensino e edificação.</p>
+
+        <div class="authors">
+          <div class="author">
+            <div class="author-icon" aria-hidden="true">📖</div>
+            <h3>Bispo Emanuel</h3>
+            <p>Ensino e exposição das Escrituras, com foco na edificação e crescimento espiritual.</p>
+          </div>
+          <div class="author">
+            <div class="author-icon" aria-hidden="true">🌿</div>
+            <h3>Missionária Ariane</h3>
+            <p>Ensino, discipulado e dedicação à Palavra para fortalecimento da caminhada cristã.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FINAL & FOOTER -->
+  <footer class="final">
+    <div class="final-content">
+      <div class="final-icon" aria-hidden="true">📖</div>
+      <h2>Leia. <span>Estude.</span> Viva.</h2>
+      <p>“Examinai as Escrituras, porque vós cuidais ter nelas a vida eterna, e são elas que de mim testificam.”</p>
+      
+      <div class="signature" aria-label="Assinatura: Bispo Emanuel e Missionária Ariane">
+        Bispo Emanuel e Missionária Ariane
+      </div>
+      
+      <div class="footer">
+        © <span id="currentYear"></span> Bíblia Digital • Estudos Bíblicos • Palavra de Deus
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /**
+     * Encapsulando o código para não poluir o escopo global (IIFE Pattern)
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // Definição das variáveis de DOM
+      const translation = document.getElementById("translation");
+      const book = document.getElementById("book");
+      const chapter = document.getElementById("chapter");
+      const translationName = document.getElementById("translationName");
+      const readerTitle = document.getElementById("readerTitle");
+      const bibleText = document.getElementById("bibleText");
+      const btnPrev = document.getElementById("btnPrev");
+      const btnNext = document.getElementById("btnNext");
+      
+      // Auto-update ano do rodapé
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      // Mapeamento de traduções
+      const translations = {
+        ARA: "ARA — Almeida Revista e Atualizada",
+        ARC: "ARC — Almeida Revista e Corrigida",
+        ACF: "ACF — Almeida Corrigida e Fiel",
+        NAA: "NAA — Nova Almeida Atualizada"
+      };
+
+      /**
+       * Função de rolagem suave para o leitor
+       */
+      const scrollToReader = () => {
+        const readerElement = document.getElementById('biblia');
+        readerElement.scrollIntoView({ behavior: 'smooth' });
+      };
+
+      /**
+       * Atualiza o estado da interface (títulos, texto fake e botões de paginação)
+       */
+      const atualizarLeitor = () => {
+        const versao = translation.value;
+        const livro = book.value;
+        const capValue = parseInt(chapter.value);
+        const maxChapters = chapter.options.length;
+
+        // Atualiza textos
+        translationName.textContent = translations[versao];
+        readerTitle.textContent = `${livro} ${capValue}`;
+
+        // Simulação do carregamento (substitua por fetch/API real)
+        bibleText.innerHTML = `
+          <p>
+            <span class="verse">
+              <span class="verse-number">1</span>
+              A leitura de <strong>${livro} ${capValue}</strong> na tradução <strong>${translations[versao]}</strong> será carregada aqui pela fonte bíblica configurada.
+            </span>
+          </p>
+          <p>
+            <span class="verse">
+              <span class="verse-number">2</span>
+              Este leitor foi preparado para integração com uma API ou base de dados autorizada.
+            </span>
+          </p>
+        `;
+
+        // Controle de botões (Desabilita anterior se cap = 1, próximo se for o último)
+        btnPrev.disabled = capValue <= 1;
+        btnNext.disabled = capValue >= maxChapters;
+      };
+
+      /**
+       * Lógica de Botões Próximo / Anterior
+       */
+      const capituloAnterior = () => {
+        let atual = parseInt(chapter.value);
+        if (atual > 1) {
+          chapter.value = atual - 1;
+          atualizarLeitor();
+          scrollToReader();
+        }
+      };
+
+      const proximoCapitulo = () => {
+        let atual = parseInt(chapter.value);
+        let max = chapter.options.length;
+        if (atual < max) {
+          chapter.value = atual + 1;
+          atualizarLeitor();
+          scrollToReader();
+        }
+      };
+
+      // Listeners
+      translation.addEventListener("change", atualizarLeitor);
+      book.addEventListener("change", atualizarLeitor);
+      chapter.addEventListener("change", atualizarLeitor);
+      
+      btnPrev.addEventListener("click", capituloAnterior);
+      btnNext.addEventListener("click", proximoCapitulo);
+
+      // Chamada inicial para configurar o estado certo dos botões on-load
+      atualizarLeitor();
+    });
+  </script>
 </body>
 </html>
