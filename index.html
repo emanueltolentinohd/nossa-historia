@@ -3,31 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#07111f">
-<meta name="description" content="Estudos Bíblicos — Bispo Emanuel e Missionária Ariane">
-<title>Estudos Bíblicos | Bispo Emanuel e Missionária Ariane</title>
+<meta name="theme-color" content="#06101d">
+<meta name="description" content="Bíblia Digital e Estudos Bíblicos — Bispo Emanuel e Missionária Ariane">
+<title>Bíblia Digital | Bispo Emanuel e Missionária Ariane</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
 
 <style>
 :root{
---bg:#050b14;
---bg2:#091525;
---bg3:#0d1d31;
---blue:#1d6fff;
---blue2:#164ec2;
---gold:#d7ad55;
---gold2:#f1d28b;
+--bg:#050b13;
+--bg2:#091523;
+--bg3:#0d1d30;
+--blue:#2675ff;
+--blue2:#1649b7;
+--gold:#d6ad58;
+--gold2:#f1d48e;
 --white:#fff;
---text:#eef4ff;
---muted:#aab8ca;
+--text:#edf4ff;
+--muted:#9aaabd;
+--line:rgba(255,255,255,.11);
 --card:rgba(255,255,255,.055);
 --card2:rgba(255,255,255,.08);
---line:rgba(255,255,255,.11);
---shadow:0 30px 90px rgba(0,0,0,.35);
 }
 
 *{
@@ -47,9 +45,9 @@ color:var(--text);
 overflow-x:hidden
 }
 
-a,
 button,
-input{
+input,
+select{
 font:inherit
 }
 
@@ -60,12 +58,10 @@ a{
 
 ::selection{
 background:var(--gold);
-color:#08101c
+color:#08101b
 }
 
-/* =========================
-   FUNDO
-========================= */
+/* FUNDO */
 
 .background{
 position:fixed;
@@ -73,7 +69,7 @@ inset:0;
 z-index:-10;
 overflow:hidden;
 background:
-radial-gradient(circle at 50% 10%,#18345b 0,#0b1729 32%,#050a12 75%)
+radial-gradient(circle at 50% 10%,#18355b 0,#0a1728 34%,#04080e 78%)
 }
 
 .background:before{
@@ -81,103 +77,80 @@ content:"";
 position:absolute;
 inset:0;
 background:
-linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
-linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
-background-size:55px 55px;
-mask-image:linear-gradient(to bottom,#000,transparent 90%)
+linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);
+background-size:55px 55px
 }
 
 .orb{
 position:absolute;
 border-radius:50%;
-filter:blur(90px);
+filter:blur(100px);
 pointer-events:none
 }
 
 .orb1{
 width:430px;
 height:430px;
-background:#145cff;
-top:-200px;
-left:-170px;
-opacity:.2
+background:#1460ff;
+left:-180px;
+top:-180px;
+opacity:.18
 }
 
 .orb2{
 width:500px;
 height:500px;
-background:#b8872f;
+background:#b78631;
 right:-250px;
-top:28%;
-opacity:.13
+top:35%;
+opacity:.11
 }
 
-.orb3{
-width:380px;
-height:380px;
-background:#236fff;
-left:25%;
-bottom:-250px;
-opacity:.12
-}
-
-/* =========================
-   NAV
-========================= */
+/* NAV */
 
 .nav{
 position:fixed;
 top:0;
 left:0;
 right:0;
-height:74px;
+height:72px;
+z-index:1000;
 display:flex;
 align-items:center;
 justify-content:space-between;
 padding:0 6%;
-z-index:1000;
-background:linear-gradient(
-180deg,
-rgba(3,8,15,.92),
-rgba(3,8,15,.35),
-transparent
-);
+background:linear-gradient(180deg,rgba(3,8,15,.94),rgba(3,8,15,.5),transparent);
 backdrop-filter:blur(14px);
--webkit-backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(255,255,255,.03)
+-webkit-backdrop-filter:blur(14px)
 }
 
 .logo{
 font-family:Parisienne,cursive;
-font-size:31px;
+font-size:30px;
 color:var(--gold2);
-text-decoration:none;
-white-space:nowrap
+text-decoration:none
 }
 
 .nav-links{
 display:flex;
-align-items:center;
-gap:28px
+gap:26px
 }
 
-.nav-link{
-color:#dbe7f7;
-text-decoration:none;
+.nav-links a{
 font-size:12px;
-letter-spacing:.4px;
-transition:.3s;
-opacity:.85
+color:#dbe6f4;
+text-decoration:none;
+opacity:.8;
+transition:.3s
 }
 
-.nav-link:hover{
+.nav-links a:hover{
 color:var(--gold2);
 opacity:1
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
 min-height:100svh;
@@ -185,8 +158,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:120px 20px 80px;
-position:relative
+padding:120px 20px 80px
 }
 
 .hero-content{
@@ -195,33 +167,17 @@ animation:entrada 1s ease both
 }
 
 .eyebrow{
-display:inline-flex;
-align-items:center;
-gap:12px;
 font-size:10px;
 text-transform:uppercase;
 letter-spacing:4px;
 color:var(--gold2);
-margin-bottom:28px
+margin-bottom:25px
 }
 
-.eyebrow:before,
-.eyebrow:after{
-content:"";
-width:35px;
-height:1px;
-background:linear-gradient(90deg,transparent,var(--gold))
-}
-
-.eyebrow:after{
-background:linear-gradient(90deg,var(--gold),transparent)
-}
-
-.bible-symbol{
-font-size:68px;
-line-height:1;
+.book-icon{
+font-size:65px;
 margin-bottom:22px;
-filter:drop-shadow(0 0 30px rgba(215,173,85,.18))
+filter:drop-shadow(0 0 30px rgba(215,173,85,.2))
 }
 
 .hero h1{
@@ -238,12 +194,11 @@ color:var(--gold2)
 }
 
 .hero-text{
-max-width:690px;
+max-width:700px;
 margin:30px auto 0;
 color:var(--muted);
 font-size:15px;
-line-height:1.9;
-font-weight:300
+line-height:1.9
 }
 
 .hero-buttons{
@@ -258,76 +213,51 @@ margin-top:40px
 display:inline-flex;
 align-items:center;
 justify-content:center;
-gap:9px;
-padding:15px 25px;
+gap:8px;
+padding:15px 24px;
 border-radius:100px;
+border:1px solid var(--line);
 text-decoration:none;
 font-size:12px;
 font-weight:600;
-transition:.35s;
-border:1px solid var(--line);
-cursor:pointer
+cursor:pointer;
+transition:.35s
 }
 
 .btn-primary{
-background:linear-gradient(135deg,#2777ff,#1748b5);
+background:linear-gradient(135deg,var(--blue),var(--blue2));
 color:#fff;
-box-shadow:0 15px 40px rgba(29,111,255,.22)
+box-shadow:0 15px 40px rgba(38,117,255,.22)
 }
 
 .btn-primary:hover{
 transform:translateY(-4px);
-box-shadow:0 20px 50px rgba(29,111,255,.35)
+box-shadow:0 20px 50px rgba(38,117,255,.35)
 }
 
 .btn-gold{
-background:linear-gradient(135deg,#e3bd6a,#a87827);
-color:#10151d;
+background:linear-gradient(135deg,#e3bd6a,#a97929);
+color:#101721;
 box-shadow:0 15px 40px rgba(215,173,85,.15)
 }
 
 .btn-gold:hover{
-transform:translateY(-4px);
-box-shadow:0 20px 50px rgba(215,173,85,.28)
+transform:translateY(-4px)
 }
 
 .btn-outline{
-color:#fff;
-background:rgba(255,255,255,.035);
-backdrop-filter:blur(10px)
+background:rgba(255,255,255,.04);
+color:#fff
 }
 
 .btn-outline:hover{
-background:rgba(255,255,255,.08);
-transform:translateY(-3px)
+background:rgba(255,255,255,.08)
 }
 
-.scroll{
-position:absolute;
-bottom:24px;
-left:50%;
-transform:translateX(-50%);
-font-size:9px;
-letter-spacing:3px;
-text-transform:uppercase;
-color:#77889d
-}
-
-.scroll:after{
-content:"";
-display:block;
-width:1px;
-height:35px;
-background:linear-gradient(#8fa0b4,transparent);
-margin:9px auto 0
-}
-
-/* =========================
-   SEÇÕES
-========================= */
+/* SEÇÕES */
 
 .section{
-padding:120px 20px
+padding:110px 20px
 }
 
 .container{
@@ -339,389 +269,280 @@ margin:auto
 text-align:center;
 color:var(--gold);
 font-size:9px;
-text-transform:uppercase;
 letter-spacing:4px;
+text-transform:uppercase;
 margin-bottom:15px
 }
 
 .section-title{
-text-align:center;
 font-family:"DM Serif Display",serif;
-font-size:clamp(2.8rem,7vw,5rem);
 font-weight:400;
-line-height:1;
-color:#fff
+font-size:clamp(2.8rem,7vw,5rem);
+text-align:center;
+line-height:1
 }
 
 .section-description{
-text-align:center;
-color:#8fa0b3;
 max-width:650px;
-margin:20px auto 60px;
+margin:20px auto 55px;
+text-align:center;
+font-size:14px;
 line-height:1.8;
-font-size:14px
+color:#8e9daf
 }
 
-/* =========================
-   VERSÍCULO
-========================= */
+/* LEITOR */
 
-.verse-box{
-position:relative;
-padding:65px 55px;
-border:1px solid rgba(215,173,85,.2);
-border-radius:35px;
-background:
-linear-gradient(
-145deg,
-rgba(215,173,85,.08),
-rgba(255,255,255,.025)
-);
-box-shadow:var(--shadow);
+.reader{
+border:1px solid var(--line);
+border-radius:32px;
 overflow:hidden;
-text-align:center
+background:rgba(255,255,255,.045);
+box-shadow:0 30px 90px rgba(0,0,0,.3)
 }
 
-.verse-box:before{
-content:"";
-position:absolute;
-left:15%;
-right:15%;
-top:0;
-height:1px;
-background:linear-gradient(
-90deg,
-transparent,
-var(--gold),
-transparent
-)
+.reader-top{
+padding:22px;
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:12px;
+border-bottom:1px solid var(--line);
+background:rgba(0,0,0,.15)
 }
 
-.verse-symbol{
-font-family:"DM Serif Display",serif;
-font-size:90px;
-line-height:.4;
-color:rgba(215,173,85,.35);
-margin-bottom:35px
+.control{
+display:flex;
+flex-direction:column;
+gap:7px
 }
 
-.verse-text{
-font-family:"DM Serif Display",serif;
-font-size:clamp(1.8rem,4vw,3rem);
-line-height:1.25;
-max-width:900px;
-margin:auto;
-color:#fff
+.control label{
+font-size:9px;
+text-transform:uppercase;
+letter-spacing:2px;
+color:#788a9e
 }
 
-.verse-reference{
-margin-top:28px;
-font-size:10px;
+.control select{
+width:100%;
+padding:13px 14px;
+border:1px solid var(--line);
+border-radius:13px;
+outline:none;
+background:#0c1929;
+color:#fff;
+cursor:pointer
+}
+
+.reader-body{
+padding:55px
+}
+
+.reader-header{
+text-align:center;
+margin-bottom:45px
+}
+
+.translation{
+font-size:9px;
 letter-spacing:3px;
 text-transform:uppercase;
-color:var(--gold2);
-font-weight:600
+color:var(--gold)
 }
 
-/* =========================
-   BUSCA
-========================= */
+.reader-title{
+font-family:"DM Serif Display",serif;
+font-size:clamp(2.4rem,6vw,4.5rem);
+font-weight:400;
+margin-top:10px
+}
 
-.search-area{
-margin:0 auto 55px;
-width:min(720px,100%)
+.reader-subtitle{
+font-size:12px;
+color:#8192a6;
+margin-top:10px
+}
+
+.bible-text{
+max-width:850px;
+margin:auto;
+font-family:"DM Serif Display",serif;
+font-size:21px;
+line-height:2;
+color:#e8eef7
+}
+
+.bible-text p{
+margin-bottom:24px
+}
+
+.verse{
+display:block;
+position:relative;
+padding-left:45px
+}
+
+.verse-number{
+position:absolute;
+left:0;
+top:4px;
+font-family:Inter,sans-serif;
+font-size:10px;
+font-weight:700;
+color:var(--gold);
+background:rgba(215,173,85,.08);
+border:1px solid rgba(215,173,85,.15);
+border-radius:7px;
+padding:3px 5px
+}
+
+.reader-footer{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+padding:22px;
+border-top:1px solid var(--line)
+}
+
+.reader-info{
+font-size:10px;
+color:#718398
+}
+
+/* BUSCA */
+
+.search{
+margin-bottom:30px
 }
 
 .search-box{
 display:flex;
-align-items:center;
-gap:12px;
-padding:7px 8px 7px 20px;
+gap:8px;
+padding:7px;
 border:1px solid var(--line);
 border-radius:100px;
-background:rgba(255,255,255,.045);
-backdrop-filter:blur(15px)
-}
-
-.search-icon{
-font-size:18px;
-color:var(--gold)
+background:rgba(255,255,255,.04)
 }
 
 .search-box input{
-width:100%;
+flex:1;
+min-width:0;
 border:0;
 outline:0;
 background:transparent;
 color:#fff;
-font-size:14px
+padding:10px 15px
 }
 
 .search-box input::placeholder{
-color:#77879a
+color:#718297
 }
 
-.search-button{
+.search-box button{
 border:0;
 border-radius:100px;
-padding:12px 20px;
+padding:11px 20px;
 background:var(--gold);
-color:#111a25;
-font-weight:700;
+color:#111a24;
 font-size:11px;
+font-weight:700;
 cursor:pointer
 }
 
-/* =========================
-   CATEGORIAS
-========================= */
+/* CATEGORIAS */
 
 .category-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:15px;
-margin-bottom:80px
+margin-top:30px
 }
 
 .category{
-padding:28px 20px;
+padding:27px 15px;
+text-align:center;
 border:1px solid var(--line);
 border-radius:22px;
 background:var(--card);
-text-align:center;
-transition:.35s;
-cursor:pointer
+cursor:pointer;
+transition:.35s
 }
 
 .category:hover{
 transform:translateY(-5px);
-border-color:rgba(215,173,85,.35);
+border-color:rgba(215,173,85,.3);
 background:var(--card2)
 }
 
 .category-icon{
-font-size:30px;
 display:block;
-margin-bottom:13px
+font-size:28px;
+margin-bottom:12px
 }
 
 .category strong{
 display:block;
-font-size:13px;
-margin-bottom:6px
+font-size:12px
 }
 
 .category span{
-font-size:10px;
-color:#8292a5
+display:block;
+margin-top:5px;
+font-size:9px;
+color:#718297
 }
 
-/* =========================
-   ESTUDOS
-========================= */
+/* DESTAQUE */
 
-.study-grid{
+.highlight{
+margin-top:60px;
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px
-}
-
-.study-card{
-position:relative;
-padding:30px;
-border:1px solid var(--line);
-border-radius:26px;
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.07),
-rgba(255,255,255,.025)
-);
-overflow:hidden;
-transition:.4s
-}
-
-.study-card:hover{
-transform:translateY(-7px);
-border-color:rgba(215,173,85,.3);
-box-shadow:0 25px 70px rgba(0,0,0,.3)
-}
-
-.study-card:after{
-content:"";
-position:absolute;
-width:100px;
-height:100px;
-border-radius:50%;
-background:var(--blue);
-filter:blur(65px);
-right:-50px;
-bottom:-50px;
-opacity:.12
-}
-
-.study-number{
-font-size:10px;
-letter-spacing:2px;
-color:var(--gold);
-text-transform:uppercase
-}
-
-.study-icon{
-font-size:32px;
-margin:22px 0 15px
-}
-
-.study-card h3{
-font-family:"DM Serif Display",serif;
-font-size:29px;
-font-weight:400;
-margin-bottom:13px
-}
-
-.study-card p{
-font-size:13px;
-line-height:1.8;
-color:#91a1b4;
-margin-bottom:25px
-}
-
-.study-link{
-display:inline-flex;
-align-items:center;
-gap:8px;
-font-size:10px;
-font-weight:700;
-text-transform:uppercase;
-letter-spacing:1.5px;
-color:var(--gold2);
-text-decoration:none
-}
-
-.study-link:hover{
-color:#fff
-}
-
-/* =========================
-   DESTAQUE
-========================= */
-
-.feature{
-display:grid;
-grid-template-columns:1fr 1.5fr;
+grid-template-columns:280px 1fr;
 gap:45px;
 align-items:center;
-padding:55px;
-border:1px solid var(--line);
-border-radius:35px;
+padding:45px;
+border:1px solid rgba(215,173,85,.18);
+border-radius:30px;
 background:
-radial-gradient(
-circle at 15% 50%,
-rgba(29,111,255,.12),
-transparent 45%
-),
-rgba(255,255,255,.035);
-overflow:hidden
+radial-gradient(circle at 15% 50%,rgba(35,105,255,.12),transparent 45%),
+rgba(255,255,255,.035)
 }
 
-.feature-symbol{
-height:270px;
+.highlight-icon{
+height:240px;
 display:flex;
 align-items:center;
 justify-content:center;
-border-radius:25px;
-border:1px solid rgba(215,173,85,.16);
-background:
-linear-gradient(
-145deg,
-rgba(215,173,85,.08),
-rgba(255,255,255,.015)
-);
-font-size:100px
+border-radius:23px;
+background:rgba(215,173,85,.06);
+border:1px solid rgba(215,173,85,.15);
+font-size:90px
 }
 
-.feature-label{
-color:var(--gold);
+.highlight-label{
 font-size:9px;
 letter-spacing:3px;
-text-transform:uppercase
+text-transform:uppercase;
+color:var(--gold)
 }
 
-.feature h2{
+.highlight h2{
 font-family:"DM Serif Display",serif;
-font-size:clamp(2.4rem,5vw,4.2rem);
+font-size:clamp(2.3rem,5vw,4rem);
 font-weight:400;
 line-height:1;
 margin:15px 0 20px
 }
 
-.feature p{
-font-size:14px;
-color:#9aabbf;
-line-height:1.9;
-max-width:620px
-}
-
-.feature-list{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-margin:25px 0
-}
-
-.feature-item{
-font-size:11px;
-color:#c6d2e0;
-padding:12px;
-border:1px solid rgba(255,255,255,.07);
-border-radius:12px;
-background:rgba(255,255,255,.025)
-}
-
-/* =========================
-   PROPÓSITO
-========================= */
-
-.purpose{
-padding:130px 20px;
-text-align:center;
-background:
-linear-gradient(
-180deg,
-transparent,
-rgba(20,59,105,.15),
-transparent
-)
-}
-
-.purpose-mark{
-font-family:"DM Serif Display",serif;
-font-size:100px;
-line-height:.4;
-color:var(--gold);
-opacity:.7
-}
-
-.purpose h2{
-font-family:"DM Serif Display",serif;
-font-size:clamp(2rem,5vw,3.8rem);
-font-weight:400;
-max-width:850px;
-margin:40px auto 25px;
-line-height:1.2
-}
-
-.purpose p{
-max-width:650px;
-margin:auto;
-color:#92a1b3;
+.highlight p{
+color:#91a0b2;
 font-size:13px;
-line-height:1.9
+line-height:1.9;
+margin-bottom:25px
 }
 
-/* =========================
-   AUTORES
-========================= */
+/* SOBRE */
 
 .authors{
 display:grid;
@@ -731,23 +552,23 @@ gap:20px
 
 .author{
 padding:35px;
+text-align:center;
 border:1px solid var(--line);
 border-radius:25px;
-background:var(--card);
-text-align:center
+background:var(--card)
 }
 
 .author-icon{
-width:70px;
-height:70px;
+width:68px;
+height:68px;
 display:flex;
 align-items:center;
 justify-content:center;
-margin:0 auto 20px;
+margin:0 auto 18px;
 border-radius:50%;
-border:1px solid rgba(215,173,85,.25);
-background:rgba(215,173,85,.07);
-font-size:30px
+border:1px solid rgba(215,173,85,.2);
+background:rgba(215,173,85,.06);
+font-size:28px
 }
 
 .author h3{
@@ -758,39 +579,31 @@ font-weight:400
 
 .author p{
 margin-top:10px;
-color:#8495a8;
+color:#8394a7;
 font-size:12px;
-line-height:1.7
+line-height:1.8
 }
 
-/* =========================
-   FINAL
-========================= */
+/* FINAL */
 
 .final{
-min-height:75svh;
+min-height:70svh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:100px 20px;
-position:relative;
+padding:90px 20px;
 background:
-radial-gradient(
-circle at center,
-#142d4e 0,
-#091523 45%,
-#04080e 80%
-)
+radial-gradient(circle at center,#152f51 0,#091522 48%,#04080e 80%)
 }
 
 .final-content{
-max-width:900px
+max-width:850px
 }
 
-.final-symbol{
+.final-icon{
 font-size:55px;
-margin-bottom:30px
+margin-bottom:25px
 }
 
 .final h2{
@@ -806,124 +619,42 @@ color:var(--gold2)
 
 .final p{
 max-width:650px;
-margin:30px auto;
-color:#a5b3c3;
-line-height:1.9;
-font-size:14px
+margin:28px auto;
+color:#9aabbc;
+font-size:14px;
+line-height:1.9
 }
 
 .signature{
 font-family:Parisienne,cursive;
-font-size:39px;
+font-size:38px;
 color:var(--gold2);
 margin-top:35px
 }
 
 .footer{
-margin-top:60px;
-color:#637487;
+margin-top:55px;
 font-size:9px;
 letter-spacing:2px;
-text-transform:uppercase
+text-transform:uppercase;
+color:#5f7185
 }
 
-/* =========================
-   MODAL
-========================= */
+/* AVISO ARA */
 
-.modal{
-position:fixed;
-inset:0;
-z-index:2000;
-display:none;
-align-items:center;
-justify-content:center;
-padding:20px;
-background:rgba(0,0,0,.75);
-backdrop-filter:blur(12px)
-}
-
-.modal.active{
-display:flex
-}
-
-.modal-content{
-position:relative;
-width:min(700px,100%);
-max-height:85vh;
-overflow:auto;
-padding:40px;
-border:1px solid var(--line);
-border-radius:28px;
-background:#0a1422;
-box-shadow:0 30px 100px rgba(0,0,0,.55)
-}
-
-.modal-close{
-position:absolute;
-right:18px;
-top:18px;
-width:38px;
-height:38px;
-border:1px solid var(--line);
-border-radius:50%;
-background:rgba(255,255,255,.05);
-color:#fff;
-cursor:pointer
-}
-
-.modal-content h2{
-font-family:"DM Serif Display",serif;
-font-size:38px;
-font-weight:400;
-margin-bottom:20px
-}
-
-.modal-content p{
-color:#a7b5c5;
-line-height:1.9;
-font-size:14px
-}
-
-.modal-content .verse{
-margin-top:25px;
-padding:25px;
-border-left:2px solid var(--gold);
+.notice{
+margin-top:18px;
+padding:14px 18px;
+border-radius:13px;
 background:rgba(215,173,85,.045);
-color:#e7edf5;
-font-family:"DM Serif Display",serif;
-font-size:20px;
-line-height:1.6
+border:1px solid rgba(215,173,85,.12);
+color:#9eacbb;
+font-size:10px;
+line-height:1.6;
+text-align:center
 }
 
-/* =========================
-   CORAÇÕES / PARTÍCULAS
-========================= */
-
-.particle{
-position:fixed;
-bottom:-20px;
-pointer-events:none;
-z-index:999;
-color:var(--gold);
-font-size:12px;
-animation:subir linear forwards;
-opacity:0
-}
-
-@keyframes subir{
-0%{
-transform:translateY(0) scale(.7);
-opacity:0
-}
-15%{
-opacity:.5
-}
-100%{
-transform:translateY(-110vh) scale(1.3);
-opacity:0
-}
-}
+/* ANIMAÇÃO */
 
 @keyframes entrada{
 from{
@@ -936,47 +667,29 @@ transform:none
 }
 }
 
-/* =========================
-   SCROLL REVEAL
-========================= */
+/* RESPONSIVO */
 
-.reveal{
-opacity:0;
-transform:translateY(30px);
-transition:opacity .8s ease,transform .8s ease
+@media(max-width:850px){
+
+.reader-top{
+grid-template-columns:1fr
 }
 
-.reveal.visible{
-opacity:1;
-transform:none
+.highlight{
+grid-template-columns:1fr
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
-
-@media(max-width:900px){
+.highlight-icon{
+height:190px
+}
 
 .category-grid{
-grid-template-columns:repeat(2,1fr)
-}
-
-.study-grid{
 grid-template-columns:1fr 1fr
 }
 
-.feature{
-grid-template-columns:1fr;
-padding:30px
 }
 
-.feature-symbol{
-height:210px
-}
-
-}
-
-@media(max-width:700px){
+@media(max-width:650px){
 
 .nav{
 height:62px;
@@ -988,19 +701,15 @@ font-size:26px
 }
 
 .nav-links{
-gap:15px
+gap:13px
 }
 
-.nav-link:nth-child(1){
+.nav-links a:nth-child(1){
 display:none
 }
 
 .hero{
-padding:105px 18px 75px
-}
-
-.bible-symbol{
-font-size:55px
+padding:100px 18px 70px
 }
 
 .hero h1{
@@ -1012,86 +721,48 @@ font-size:13px
 }
 
 .section{
-padding:85px 15px
+padding:80px 15px
 }
 
-.verse-box{
-padding:50px 23px;
-border-radius:25px
+.reader{
+border-radius:24px
 }
 
-.verse-symbol{
-font-size:75px
+.reader-body{
+padding:32px 20px
+}
+
+.bible-text{
+font-size:19px;
+line-height:1.9
+}
+
+.reader-footer{
+flex-direction:column
 }
 
 .category-grid{
 grid-template-columns:1fr 1fr;
-gap:10px
+gap:9px
 }
 
-.category{
-padding:22px 10px
-}
-
-.study-grid{
-grid-template-columns:1fr
-}
-
-.study-card{
-padding:27px
-}
-
-.feature{
+.highlight{
+padding:28px;
 border-radius:25px
-}
-
-.feature-list{
-grid-template-columns:1fr
 }
 
 .authors{
 grid-template-columns:1fr
 }
 
-.purpose{
-padding:90px 20px
-}
-
-.final{
-min-height:70svh
-}
-
-.modal-content{
-padding:30px 22px
-}
-
-.modal-content h2{
-font-size:31px
-}
-
-.search-box{
-padding-left:15px
-}
-
-.search-button{
-padding:11px 16px
-}
-
 }
 
 @media(prefers-reduced-motion:reduce){
 
-*,
-*:before,
-*:after{
+*{
+scroll-behavior:auto!important;
 animation:none!important;
-transition:none!important;
-scroll-behavior:auto!important
-}
-
-.reveal{
-opacity:1;
-transform:none
+transition:none!important
 }
 
 }
@@ -1100,102 +771,58 @@ transform:none
 
 <body>
 
-<!-- FUNDO -->
 <div class="background">
 <div class="orb orb1"></div>
 <div class="orb orb2"></div>
-<div class="orb orb3"></div>
 </div>
 
-<!-- NAV -->
 <nav class="nav">
 
 <a href="#" class="logo">
-Estudos Bíblicos
+Bíblia
 </a>
 
 <div class="nav-links">
-<a href="#estudos" class="nav-link">Estudos</a>
-<a href="#versiculo" class="nav-link">Versículo</a>
-<a href="#sobre" class="nav-link">Sobre</a>
+<a href="#biblia">Bíblia</a>
+<a href="#estudos">Estudos</a>
+<a href="#sobre">Sobre</a>
 </div>
 
 </nav>
 
 <!-- HERO -->
+
 <section class="hero">
 
 <div class="hero-content">
 
 <div class="eyebrow">
-Palavra • Ensino • Edificação
+Palavra • Fé • Conhecimento
 </div>
 
-<div class="bible-symbol">
+<div class="book-icon">
 📖
 </div>
 
 <h1>
-Conhecer a Palavra.
-<span>Viver pela fé.</span>
+Leia a Palavra.
+<span>Conheça a Verdade.</span>
 </h1>
 
 <p class="hero-text">
-Um espaço dedicado ao estudo das Escrituras, ao crescimento espiritual,
-ao discernimento e à edificação da Igreja através da Palavra de Deus.
+Uma Bíblia digital criada para leitura, estudo e edificação,
+com uma experiência moderna e dedicada à Palavra de Deus.
 </p>
 
 <div class="hero-buttons">
 
-<a href="#estudos" class="btn btn-gold">
-📖 Explorar estudos
+<a href="#biblia" class="btn btn-gold">
+📖 Abrir Bíblia
 </a>
 
-<a href="#versiculo" class="btn btn-outline">
-Versículo em destaque
+<a href="#estudos" class="btn btn-outline">
+Estudos Bíblicos
 </a>
-
-</div>
-
-</div>
-
-<div class="scroll">
-Deslize
-</div>
-
-</section>
-
-<!-- VERSÍCULO -->
-<section class="section" id="versiculo">
-
-<div class="container">
-
-<div class="section-label">
-Palavra para hoje
-</div>
-
-<h2 class="section-title">
-A Palavra permanece.
-</h2>
-
-<p class="section-description">
-A Escritura nos ensina, corrige, instrui e conduz em nossa caminhada com Deus.
-</p>
-
-<div class="verse-box reveal">
-
-<div class="verse-symbol">
-“
-</div>
-
-<div class="verse-text">
-“Lâmpada para os meus pés é tua palavra,
-e luz para o meu caminho.”
-</div>
-
-<div class="verse-reference">
-Salmos 119:105
-</div>
 
 </div>
 
@@ -1203,353 +830,321 @@ Salmos 119:105
 
 </section>
 
-<!-- BUSCA -->
-<section class="section" id="estudos">
+<!-- BÍBLIA -->
+
+<section class="section" id="biblia">
 
 <div class="container">
 
 <div class="section-label">
-Biblioteca de estudos
+Bíblia Digital
 </div>
 
 <h2 class="section-title">
-Estude a Palavra
+Escolha sua Bíblia
 </h2>
 
 <p class="section-description">
-Pesquise temas, assuntos e estudos para aprofundar seu conhecimento das Escrituras.
+Selecione a tradução, o livro e o capítulo que deseja ler.
 </p>
 
-<div class="search-area">
+<div class="reader">
 
-<div class="search-box">
+<div class="reader-top">
 
-<span class="search-icon">
-⌕
+<div class="control">
+
+<label>
+Tradução
+</label>
+
+<select id="translation">
+
+<option value="ARA">
+ARA — Almeida Revista e Atualizada
+</option>
+
+<option value="ARC">
+ARC — Almeida Revista e Corrigida
+</option>
+
+<option value="ACF">
+ACF — Almeida Corrigida e Fiel
+</option>
+
+<option value="NAA">
+NAA — Nova Almeida Atualizada
+</option>
+
+</select>
+
+</div>
+
+<div class="control">
+
+<label>
+Livro
+</label>
+
+<select id="book">
+
+<option>Gênesis</option>
+<option>Êxodo</option>
+<option>Levítico</option>
+<option>Números</option>
+<option>Deuteronômio</option>
+<option>Josué</option>
+<option>Juízes</option>
+<option>Rute</option>
+<option>1 Samuel</option>
+<option>2 Samuel</option>
+<option>1 Reis</option>
+<option>2 Reis</option>
+<option>1 Crônicas</option>
+<option>2 Crônicas</option>
+<option>Esdras</option>
+<option>Neemias</option>
+<option>Ester</option>
+<option>Jó</option>
+<option>Salmos</option>
+<option>Provérbios</option>
+<option>Eclesiastes</option>
+<option>Cânticos</option>
+<option>Isaías</option>
+<option>Jeremias</option>
+<option>Lamentações</option>
+<option>Ezequiel</option>
+<option>Daniel</option>
+<option>Oseias</option>
+<option>Joel</option>
+<option>Amós</option>
+<option>Obadias</option>
+<option>Jonas</option>
+<option>Miqueias</option>
+<option>Naum</option>
+<option>Habacuque</option>
+<option>Sofonias</option>
+<option>Ageu</option>
+<option>Zacarias</option>
+<option>Malaquias</option>
+<option>Mateus</option>
+<option>Marcos</option>
+<option>Lucas</option>
+<option>João</option>
+<option>Atos</option>
+<option>Romanos</option>
+<option>1 Coríntios</option>
+<option>2 Coríntios</option>
+<option>Gálatas</option>
+<option>Efésios</option>
+<option>Filipenses</option>
+<option>Colossenses</option>
+<option>1 Tessalonicenses</option>
+<option>2 Tessalonicenses</option>
+<option>1 Timóteo</option>
+<option>2 Timóteo</option>
+<option>Tito</option>
+<option>Filemom</option>
+<option>Hebreus</option>
+<option>Tiago</option>
+<option>1 Pedro</option>
+<option>2 Pedro</option>
+<option>1 João</option>
+<option>2 João</option>
+<option>3 João</option>
+<option>Judas</option>
+<option>Apocalipse</option>
+
+</select>
+
+</div>
+
+<div class="control">
+
+<label>
+Capítulo
+</label>
+
+<select id="chapter">
+
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+<option>13</option>
+<option>14</option>
+<option>15</option>
+<option>16</option>
+<option>17</option>
+<option>18</option>
+<option>19</option>
+<option>20</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="reader-body">
+
+<div class="reader-header">
+
+<div class="translation" id="translationName">
+ARA — Almeida Revista e Atualizada
+</div>
+
+<h2 class="reader-title" id="readerTitle">
+Gênesis 1
+</h2>
+
+<div class="reader-subtitle">
+Leitura bíblica
+</div>
+
+</div>
+
+<div class="bible-text" id="bibleText">
+
+<p>
+<span class="verse">
+<span class="verse-number">1</span>
+Selecione a tradução, o livro e o capítulo acima para iniciar a leitura.
+</span>
+</p>
+
+<p>
+<span class="verse">
+<span class="verse-number">2</span>
+O conteúdo da Bíblia será carregado aqui através da fonte bíblica configurada no sistema.
+</span>
+</p>
+
+</div>
+
+</div>
+
+<div class="reader-footer">
+
+<span class="reader-info">
+📖 Leitura digital
 </span>
 
-<input
-type="text"
-id="searchInput"
-placeholder="Pesquisar estudo..."
-autocomplete="off"
->
+<div>
 
 <button
-class="search-button"
-onclick="buscarEstudos()">
-Buscar
+class="btn btn-outline"
+onclick="capituloAnterior()">
+← Anterior
+</button>
+
+<button
+class="btn btn-primary"
+onclick="proximoCapitulo()">
+Próximo →
 </button>
 
 </div>
 
 </div>
 
-<!-- CATEGORIAS -->
-
-<div class="category-grid">
-
-<div class="category" onclick="filtrarCategoria('fé')">
-<span class="category-icon">🕊️</span>
-<strong>Fé</strong>
-<span>Confiança em Deus</span>
 </div>
 
-<div class="category" onclick="filtrarCategoria('oração')">
-<span class="category-icon">🙏</span>
-<strong>Oração</strong>
-<span>Vida de oração</span>
-</div>
+<div class="notice">
 
-<div class="category" onclick="filtrarCategoria('libertação')">
-<span class="category-icon">🔓</span>
-<strong>Libertação</strong>
-<span>Vida espiritual</span>
-</div>
-
-<div class="category" onclick="filtrarCategoria('batalha')">
-<span class="category-icon">⚔️</span>
-<strong>Batalha Espiritual</strong>
-<span>Discernimento</span>
-</div>
-
-</div>
-
-<!-- CARDS -->
-
-<div class="study-grid" id="studyGrid">
-
-<article
-class="study-card reveal"
-data-category="batalha espiritual discernimento">
-
-<div class="study-number">
-Estudo 01
-</div>
-
-<div class="study-icon">
-⚔️
-</div>
-
-<h3>
-Batalha Espiritual
-</h3>
-
-<p>
-Discernimento, preparação e combate na batalha espiritual
-à luz de Efésios 6:10–18.
-</p>
-
-<a
-href="#"
-class="study-link"
-onclick="abrirEstudo('batalha');return false">
-Abrir estudo →
-</a>
-
-</article>
-
-<article
-class="study-card reveal"
-data-category="libertação">
-
-<div class="study-number">
-Estudo 02
-</div>
-
-<div class="study-icon">
-🔓
-</div>
-
-<h3>
-Libertação
-</h3>
-
-<p>
-Um estudo bíblico sobre arrependimento, renúncia,
-santidade e liberdade em Cristo.
-</p>
-
-<a
-href="#"
-class="study-link"
-onclick="abrirEstudo('libertacao');return false">
-Abrir estudo →
-</a>
-
-</article>
-
-<article
-class="study-card reveal"
-data-category="fé">
-
-<div class="study-number">
-Estudo 03
-</div>
-
-<div class="study-icon">
-🌱
-</div>
-
-<h3>
-Fé como um Grão
-</h3>
-
-<p>
-Reflexão sobre Mateus 13 e a importância de cultivar
-uma fé viva e perseverante.
-</p>
-
-<a
-href="#"
-class="study-link"
-onclick="abrirEstudo('fe');return false">
-Abrir estudo →
-</a>
-
-</article>
-
-<article
-class="study-card reveal"
-data-category="oração">
-
-<div class="study-number">
-Estudo 04
-</div>
-
-<div class="study-icon">
-🙏
-</div>
-
-<h3>
-Vida de Oração
-</h3>
-
-<p>
-Princípios bíblicos para desenvolver uma vida constante
-de oração e comunhão com Deus.
-</p>
-
-<a
-href="#"
-class="study-link"
-onclick="abrirEstudo('oracao');return false">
-Abrir estudo →
-</a>
-
-</article>
-
-<article
-class="study-card reveal"
-data-category="discernimento palavra">
-
-<div class="study-number">
-Estudo 05
-</div>
-
-<div class="study-icon">
-💡
-</div>
-
-<h3>
-Discernimento Espiritual
-</h3>
-
-<p>
-Como examinar todas as coisas e permanecer fundamentado
-na verdade das Escrituras.
-</p>
-
-<a
-href="#"
-class="study-link"
-onclick="abrirEstudo('discernimento');return false">
-Abrir estudo →
-</a>
-
-</article>
-
-<article
-class="study-card reveal"
-data-category="santidade vida cristã">
-
-<div class="study-number">
-Estudo 06
-</div>
-
-<div class="study-icon">
-🔥
-</div>
-
-<h3>
-Santidade
-</h3>
-
-<p>
-Chamados para viver uma vida separada para Deus,
-segundo os princípios da Palavra.
-</p>
-
-<a
-href="#"
-class="study-link"
-onclick="abrirEstudo('santidade');return false">
-Abrir estudo →
-</a>
-
-</article>
-
+<strong>ARA:</strong>
+A Almeida Revista e Atualizada é uma tradução protegida por direitos autorais.
+Para uso público do texto integral, utilize uma fonte/licença autorizada.
 </div>
 
 </div>
 
 </section>
 
-<!-- ESTUDO EM DESTAQUE -->
+<!-- ESTUDOS -->
 
-<section class="section">
+<section class="section" id="estudos">
 
 <div class="container">
 
-<div class="feature reveal">
+<div class="section-label">
+Estudo da Palavra
+</div>
 
-<div class="feature-symbol">
+<h2 class="section-title">
+Estudos Bíblicos
+</h2>
+
+<p class="section-description">
+Aprofunde sua compreensão das Escrituras através de estudos organizados por temas.
+</p>
+
+<div class="category-grid">
+
+<div class="category">
+<span class="category-icon">⚔️</span>
+<strong>Batalha Espiritual</strong>
+<span>Efésios 6</span>
+</div>
+
+<div class="category">
+<span class="category-icon">🙏</span>
+<strong>Oração</strong>
+<span>Comunhão com Deus</span>
+</div>
+
+<div class="category">
+<span class="category-icon">🔓</span>
+<strong>Libertação</strong>
+<span>Vida cristã</span>
+</div>
+
+<div class="category">
+<span class="category-icon">🌱</span>
+<strong>Fé</strong>
+<span>Confiança em Deus</span>
+</div>
+
+</div>
+
+<div class="highlight">
+
+<div class="highlight-icon">
 🛡️
 </div>
 
 <div>
 
-<div class="feature-label">
+<div class="highlight-label">
 Estudo em destaque
 </div>
 
 <h2>
-Discernimento,<br>
+Discernimento,
 Preparação e Combate
 </h2>
 
 <p>
-“Fortalecei-vos no Senhor e na força do seu poder.”
-Efésios 6 apresenta a realidade da batalha espiritual
-e a necessidade de permanecer firmes em Deus.
+Um estudo baseado principalmente em Efésios 6:10–18,
+abordando a necessidade de permanecer firme no Senhor,
+conhecer a Palavra e viver uma vida de oração.
 </p>
 
-<div class="feature-list">
-
-<div class="feature-item">
-✓ Discernimento espiritual
-</div>
-
-<div class="feature-item">
-✓ Armadura de Deus
-</div>
-
-<div class="feature-item">
-✓ Resistência espiritual
-</div>
-
-<div class="feature-item">
-✓ Palavra e oração
-</div>
-
-</div>
-
-<a
-href="#"
-class="btn btn-primary"
-onclick="abrirEstudo('batalha');return false">
-Continuar estudo
+<a href="#" class="btn btn-primary">
+Abrir estudo
 </a>
 
 </div>
 
 </div>
-
-</div>
-
-</section>
-
-<!-- PROPÓSITO -->
-
-<section class="purpose">
-
-<div class="container">
-
-<div class="purpose-mark">
-“
-</div>
-
-<h2>
-“Procura apresentar-te a Deus aprovado,
-como obreiro que não tem de que se envergonhar,
-que maneja bem a palavra da verdade.”
-</h2>
-
-<p>
-2 Timóteo 2:15. O propósito deste espaço é incentivar
-o estudo responsável das Escrituras, fortalecendo a fé
-e promovendo crescimento através da Palavra de Deus.
-</p>
 
 </div>
 
@@ -1566,16 +1161,16 @@ Ministério
 </div>
 
 <h2 class="section-title">
-Quem conduz
+Estudos e Palavra
 </h2>
 
 <p class="section-description">
-Um espaço preparado para ensino, reflexão e edificação através das Escrituras.
+Conteúdo preparado para leitura, ensino e edificação.
 </p>
 
 <div class="authors">
 
-<div class="author reveal">
+<div class="author">
 
 <div class="author-icon">
 📖
@@ -1586,13 +1181,13 @@ Bispo Emanuel
 </h3>
 
 <p>
-Ensino, orientação e exposição da Palavra de Deus,
+Ensino e exposição das Escrituras,
 com foco na edificação e crescimento espiritual.
 </p>
 
 </div>
 
-<div class="author reveal">
+<div class="author">
 
 <div class="author-icon">
 🌿
@@ -1603,8 +1198,8 @@ Missionária Ariane
 </h3>
 
 <p>
-Ensino, discipulado e apoio à caminhada cristã,
-com dedicação à Palavra e à edificação da Igreja.
+Ensino, discipulado e dedicação à Palavra
+para fortalecimento da caminhada cristã.
 </p>
 
 </div>
@@ -1621,304 +1216,167 @@ com dedicação à Palavra e à edificação da Igreja.
 
 <div class="final-content">
 
-<div class="final-symbol">
+<div class="final-icon">
 📖
 </div>
 
 <h2>
-Conheça a Palavra.
-<span>Viva a Palavra.</span>
+Leia.
+<span>Estude.</span>
+Viva.
 </h2>
 
 <p>
-Que cada estudo seja uma oportunidade para crescer,
-amadurecer na fé e conhecer cada vez mais as Escrituras.
+“Examinai as Escrituras, porque vós cuidais ter nelas a vida eterna,
+e são elas que de mim testificam.”
 </p>
-
-<a
-href="#estudos"
-class="btn btn-gold">
-Começar um estudo
-</a>
 
 <div class="signature">
 Bispo Emanuel e Missionária Ariane
 </div>
 
 <div class="footer">
-Estudos Bíblicos • Palavra • Fé • Edificação
+Bíblia Digital • Estudos Bíblicos • Palavra de Deus
 </div>
 
 </div>
 
 </section>
 
-<!-- MODAL -->
-
-<div
-class="modal"
-id="studyModal"
-onclick="fecharModal(event)">
-
-<div class="modal-content">
-
-<button
-class="modal-close"
-onclick="fecharModal()">
-×
-</button>
-
-<h2 id="modalTitle">
-Estudo Bíblico
-</h2>
-
-<p id="modalDescription">
-</p>
-
-<div
-class="verse"
-id="modalVerse">
-</div>
-
-</div>
-
-</div>
-
 <script>
 
-/* =========================
-   DADOS DOS ESTUDOS
-========================= */
+/*
+==================================================
+CONFIGURAÇÃO DA BÍBLIA
+==================================================
 
-const estudos={
+O leitor está preparado para receber uma API
+ou uma base de dados bíblica licenciada.
 
-batalha:{
-titulo:"Batalha Espiritual",
-descricao:"A batalha espiritual deve ser compreendida à luz das Escrituras. Efésios 6:10–18 apresenta o chamado para permanecer firme no Senhor, utilizando a armadura de Deus e perseverando em oração.",
-versiculo:"“No demais, irmãos meus, fortalecei-vos no Senhor e na força do seu poder.” — Efésios 6:10"
-},
+A ARA é protegida por direitos autorais.
+Não coloque uma cópia integral da ARA diretamente
+neste HTML sem a licença necessária.
+*/
 
-libertacao:{
-titulo:"Libertação",
-descricao:"A liberdade cristã está relacionada à obra de Cristo, ao arrependimento, à fé e a uma vida de obediência a Deus. O estudo deve sempre permanecer fundamentado nas Escrituras.",
-versiculo:"“Se, pois, o Filho vos libertar, verdadeiramente sereis livres.” — João 8:36"
-},
+const translation=document.getElementById("translation");
+const book=document.getElementById("book");
+const chapter=document.getElementById("chapter");
 
-fe:{
-titulo:"Fé como um Grão",
-descricao:"Jesus utilizou o grão de mostarda como exemplo para ensinar sobre a fé. A vida cristã é marcada pela confiança em Deus e pela perseverança diante das circunstâncias.",
-versiculo:"“Se tiverdes fé como um grão de mostarda...” — Mateus 17:20"
-},
+const translationName=document.getElementById("translationName");
+const readerTitle=document.getElementById("readerTitle");
+const bibleText=document.getElementById("bibleText");
 
-oracao:{
-titulo:"Vida de Oração",
-descricao:"A oração é uma prática fundamental da caminhada cristã. A Bíblia apresenta a oração como expressão de comunhão, dependência, gratidão, súplica e intercessão diante de Deus.",
-versiculo:"“Orai sem cessar.” — 1 Tessalonicenses 5:17"
-},
+/*
+Nomes das traduções
+*/
 
-discernimento:{
-titulo:"Discernimento Espiritual",
-descricao:"O discernimento bíblico envolve examinar aquilo que ouvimos e vivemos à luz da Palavra de Deus. O cristão é chamado a provar todas as coisas e permanecer na verdade.",
-versiculo:"“Examinai tudo. Retende o bem.” — 1 Tessalonicenses 5:21"
-},
-
-santidade:{
-titulo:"Santidade",
-descricao:"A santidade é um chamado bíblico para uma vida dedicada a Deus. Ela envolve transformação, obediência e separação do pecado, tendo Cristo como referência.",
-versiculo:"“Sede santos, porque eu sou santo.” — 1 Pedro 1:16"
-}
-
+const translations={
+ARA:"ARA — Almeida Revista e Atualizada",
+ARC:"ARC — Almeida Revista e Corrigida",
+ACF:"ACF — Almeida Corrigida e Fiel",
+NAA:"NAA — Nova Almeida Atualizada"
 };
 
-/* =========================
-   MODAL
-========================= */
+/*
+Atualiza cabeçalho
+*/
 
-function abrirEstudo(nome){
+function atualizarLeitor(){
 
-const estudo=estudos[nome];
+const versao=translation.value;
+const livro=book.value;
+const cap=chapter.value;
 
-if(!estudo)return;
+translationName.textContent=translations[versao];
 
-document.getElementById("modalTitle").textContent=estudo.titulo;
+readerTitle.textContent=
+livro+" "+cap;
 
-document.getElementById("modalDescription").textContent=estudo.descricao;
+bibleText.innerHTML=`
 
-document.getElementById("modalVerse").textContent=estudo.versiculo;
+<p>
+<span class="verse">
+<span class="verse-number">1</span>
+A leitura de <strong>${livro} ${cap}</strong>
+na tradução <strong>${translations[versao]}</strong>
+será carregada aqui pela fonte bíblica configurada.
+</span>
+</p>
 
-document.getElementById("studyModal").classList.add("active");
+<p>
+<span class="verse">
+<span class="verse-number">2</span>
+Este leitor foi preparado para integração com uma
+API ou base de dados autorizada.
+</span>
+</p>
 
-document.body.style.overflow="hidden";
-}
-
-function fecharModal(event){
-
-if(event && event.target!==document.getElementById("studyModal")){
-return;
-}
-
-document.getElementById("studyModal").classList.remove("active");
-
-document.body.style.overflow="";
-}
-
-/* =========================
-   BUSCA
-========================= */
-
-function buscarEstudos(){
-
-const termo=document
-.getElementById("searchInput")
-.value
-.toLowerCase()
-.trim();
-
-const cards=document.querySelectorAll(".study-card");
-
-cards.forEach(card=>{
-
-const texto=card.textContent.toLowerCase();
-
-if(!termo || texto.includes(termo)){
-card.style.display="";
-}else{
-card.style.display="none";
-}
-
-});
-
-document
-.getElementById("estudos")
-.scrollIntoView({
-behavior:"smooth"
-});
-}
-
-document
-.getElementById("searchInput")
-.addEventListener("keydown",function(e){
-
-if(e.key==="Enter"){
-buscarEstudos();
-}
-
-});
-
-/* =========================
-   FILTRO
-========================= */
-
-function filtrarCategoria(categoria){
-
-const cards=document.querySelectorAll(".study-card");
-
-cards.forEach(card=>{
-
-const categorias=card
-.getAttribute("data-category")
-.toLowerCase();
-
-if(categorias.includes(categoria.toLowerCase())){
-card.style.display="";
-}else{
-card.style.display="none";
-}
-
-});
-
-document
-.getElementById("estudos")
-.scrollIntoView({
-behavior:"smooth"
-});
+`;
 
 }
 
-/* =========================
-   REVELAÇÃO
-========================= */
+/*
+Eventos
+*/
 
-const observer=new IntersectionObserver(
-entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
-observer.unobserve(entry.target);
-}
-
-});
-
-},
-{
-threshold:.12
-}
+translation.addEventListener(
+"change",
+atualizarLeitor
 );
 
-document
-.querySelectorAll(".reveal")
-.forEach(element=>{
-observer.observe(element);
+book.addEventListener(
+"change",
+atualizarLeitor
+);
+
+chapter.addEventListener(
+"change",
+atualizarLeitor
+);
+
+/*
+Anterior
+*/
+
+function capituloAnterior(){
+
+let valor=parseInt(chapter.value);
+
+if(valor>1){
+chapter.value=valor-1;
+atualizarLeitor();
+window.scrollTo({
+top:document.getElementById("biblia").offsetTop-70,
+behavior:"smooth"
 });
-
-/* =========================
-   PARTÍCULAS
-========================= */
-
-let particles=0;
-const maxParticles=7;
-
-function criarParticula(){
-
-if(particles>=maxParticles)return;
-
-const el=document.createElement("div");
-
-el.className="particle";
-
-el.textContent=[
-"✦",
-"✧",
-"·",
-"✦"
-][Math.floor(Math.random()*4)];
-
-el.style.left=Math.random()*100+"vw";
-
-el.style.fontSize=
-8+Math.random()*10+"px";
-
-el.style.animationDuration=
-7+Math.random()*4+"s";
-
-document.body.appendChild(el);
-
-particles++;
-
-setTimeout(()=>{
-
-el.remove();
-particles--;
-
-},11000);
+}
 
 }
 
-setInterval(criarParticula,1800);
+/*
+Próximo
+*/
 
-/* =========================
-   ESC
-========================= */
+function proximoCapitulo(){
 
-document.addEventListener("keydown",function(e){
+let valor=parseInt(chapter.value);
 
-if(e.key==="Escape"){
-fecharModal();
+chapter.value=valor+1;
+
+atualizarLeitor();
+
+window.scrollTo({
+top:document.getElementById("biblia").offsetTop-70,
+behavior:"smooth"
+});
+
 }
 
-});
+/*
+Inicialização
+*/
+
+atualizarLeitor();
 
 </script>
 
