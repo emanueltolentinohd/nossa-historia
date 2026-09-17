@@ -1,152 +1,238 @@
 <!DOCTYPE html><html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nossa História ❤️</title>
-<style>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#10070d">
+<title>Nossa História ❤️</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&family=Parisienne&display=swap" rel="stylesheet"><style>
+:root{
+--bg:#0b060a;
+--bg2:#160a12;
+--pink:#ff4f83;
+--pink2:#d92f68;
+--rose:#ffb4c9;
+--text:#fff;
+--muted:#d9c5ce;
+--dark:#24131c;
+--card:rgba(255,255,255,.07);
+--line:rgba(255,255,255,.12);
+}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#160b20;color:#fff;overflow-x:hidden}
-.inicio{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;background:linear-gradient(135deg,#160b20,#2b102d,#50152c)}
-.inicio-conteudo{max-width:700px}
-.coracao-principal{font-size:75px;animation:pulsar 1.5s infinite}
-.inicio h1{margin-top:25px;font-size:clamp(2.5rem,8vw,5rem);line-height:1.05}
-.inicio p{margin-top:25px;font-size:1.2rem;color:#f1dce8;line-height:1.7}
-.botao{display:inline-block;margin-top:35px;padding:18px 32px;border-radius:50px;background:#ff477e;color:#fff;font-size:1.05rem;font-weight:bold;text-decoration:none;box-shadow:0 10px 30px rgba(255,71,126,.4);transition:.3s}
-.botao:hover{transform:translateY(-4px) scale(1.03);background:#ff5f91}
-.conteudo{min-height:100vh;background:#fff9fb;color:#402536;padding:80px 20px}
-.container{width:min(100%,900px);margin:auto}
-.titulo-secao{text-align:center;font-size:clamp(2rem,6vw,3.2rem);color:#8f3150;margin-bottom:15px}
-.subtitulo{text-align:center;color:#7d6571;font-size:1.1rem;margin-bottom:60px}
-.contador{background:#fff;border-radius:24px;padding:35px 20px;box-shadow:0 10px 40px rgba(76,27,53,.08);text-align:center;margin-bottom:70px}
-.contador h2{color:#8f3150;margin-bottom:25px}
-.tempo{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.tempo-item{background:#fff0f5;padding:20px 10px;border-radius:18px}
-.tempo-item strong{display:block;font-size:2rem;color:#d7386e}
-.tempo-item span{font-size:.8rem;color:#725d68}
-.linha-tempo{margin-bottom:70px}
-.titulo-historia{text-align:center;color:#8f3150;font-size:2rem;margin-bottom:45px}
-.evento{display:flex;gap:25px;margin-bottom:25px;padding:30px;background:#fff;border-radius:24px;box-shadow:0 10px 40px rgba(76,27,53,.08);transition:.3s}
-.evento:hover{transform:translateY(-5px);box-shadow:0 15px 45px rgba(76,27,53,.13)}
-.evento-coracao{width:65px;height:65px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#fff0f5;border-radius:50%;font-size:30px}
-.evento-conteudo{flex:1}
-.evento-data{display:inline-block;margin-bottom:8px;color:#d7386e;font-weight:bold;font-size:.95rem}
-.evento h3{margin-bottom:10px;color:#6f2944;font-size:1.5rem}
-.evento p{color:#725d68;line-height:1.7}
-.carta{background:#fff;padding:45px;border-radius:24px;box-shadow:0 10px 40px rgba(76,27,53,.08);line-height:1.9;font-size:1.1rem}
-.carta h2{color:#8f3150;margin-bottom:25px;font-size:2rem}
-.assinatura{margin-top:30px;font-size:1.3rem;color:#c13667;font-weight:bold}
-.final{min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:linear-gradient(135deg,#160b20,#2b102d,#50152c)}
-.final h2{font-size:clamp(2.5rem,7vw,5rem)}
-.final p{margin-top:25px;color:#f2dbe5;font-size:1.2rem}
-.coracao{position:fixed;bottom:-30px;z-index:999;pointer-events:none;animation:subir linear forwards}
-@keyframes subir{from{transform:translateY(0);opacity:1}to{transform:translateY(-110vh);opacity:0}}
-@keyframes pulsar{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-@media(max-width:600px){
-.tempo{grid-template-columns:repeat(2,1fr)}
-.evento{flex-direction:column;padding:25px}
-.evento-coracao{width:55px;height:55px;font-size:25px}
-.carta{padding:30px 24px}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+button,a{font:inherit}
+::selection{background:var(--pink);color:#fff}
+
+/* FUNDO */
+.background{position:fixed;inset:0;z-index:-5;overflow:hidden;background:radial-gradient(circle at 50% 20%,#48152e 0,#1c0b17 35%,#090508 75%)}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35}
+.orb1{width:400px;height:400px;background:#e62e68;top:-150px;left:-120px}
+.orb2{width:450px;height:450px;background:#7e1e52;right:-180px;top:35%}
+.orb3{width:350px;height:350px;background:#ff7199;left:20%;bottom:-250px;opacity:.15}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;z-index:1000;background:linear-gradient(180deg,rgba(8,4,7,.8),transparent);backdrop-filter:blur(8px)}
+.logo{font-family:Parisienne,cursive;font-size:30px;color:#fff;text-decoration:none}
+.nav-link{color:#fff;text-decoration:none;font-size:13px;opacity:.8;transition:.3s}
+.nav-link:hover{opacity:1;color:var(--rose)}
+
+/* HERO */
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 20px 70px;position:relative}
+.hero-content{max-width:900px;animation:entrada 1.2s ease both}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:4px;color:var(--rose);margin-bottom:25px}
+.heart{font-size:76px;display:inline-block;animation:pulse 1.8s ease-in-out infinite;text-shadow:0 0 40px rgba(255,79,131,.5)}
+.hero h1{font-family:"DM Serif Display",serif;font-weight:400;font-size:clamp(4rem,11vw,8.5rem);line-height:.9;letter-spacing:-3px;margin-top:25px}
+.hero h1 span{color:var(--rose)}
+.hero-text{max-width:620px;margin:30px auto 0;color:var(--muted);font-size:16px;line-height:1.8;font-weight:300}
+.hero-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 25px;border-radius:100px;text-decoration:none;font-size:13px;font-weight:600;transition:.35s;border:1px solid var(--line)}
+.btn-primary{background:linear-gradient(135deg,var(--pink),var(--pink2));color:#fff;box-shadow:0 12px 35px rgba(255,79,131,.25)}
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(255,79,131,.4)}
+.btn-outline{color:#fff;background:rgba(255,255,255,.04);backdrop-filter:blur(10px)}
+.btn-outline:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+.scroll{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#bba7b0}
+.scroll:after{content:"";display:block;width:1px;height:35px;background:linear-gradient(#fff,transparent);margin:9px auto 0}
+
+/* SEÇÕES */
+.section{padding:120px 20px}
+.container{width:min(1100px,100%);margin:auto}
+.section-label{text-align:center;color:var(--pink);font-size:10px;text-transform:uppercase;letter-spacing:4px;margin-bottom:15px}
+.section-title{text-align:center;font-family:"DM Serif Display",serif;font-size:clamp(2.8rem,7vw,5rem);font-weight:400;line-height:1;color:#fff}
+.section-description{text-align:center;color:#aa969f;max-width:600px;margin:20px auto 65px;line-height:1.7;font-size:14px}
+
+/* CONTADOR */
+.counter{position:relative;border:1px solid var(--line);border-radius:35px;padding:50px 30px;background:rgba(255,255,255,.055);backdrop-filter:blur(18px);box-shadow:0 30px 100px rgba(0,0,0,.35);overflow:hidden}
+.counter:before{content:"";position:absolute;left:15%;right:15%;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--pink),transparent)}
+.counter-title{text-align:center;font-family:"DM Serif Display",serif;font-size:28px;font-weight:400;margin-bottom:35px}
+.time{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.time-item{text-align:center;padding:25px 10px;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:rgba(0,0,0,.18)}
+.time-number{display:block;font-size:clamp(2rem,5vw,3.4rem);font-weight:600;letter-spacing:-2px;color:#fff}
+.time-label{display:block;margin-top:5px;font-size:9px;text-transform:uppercase;letter-spacing:2px;color:#b9a4ae}
+
+/* HISTÓRIA */
+.timeline{position:relative;margin-top:60px}
+.timeline:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(transparent,#e65a84,#e65a84,transparent)}
+.event{width:50%;position:relative;padding:0 50px 70px}
+.event:nth-child(odd){margin-right:auto;text-align:right}
+.event:nth-child(even){margin-left:50%;text-align:left}
+.event-dot{position:absolute;top:5px;width:14px;height:14px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 6px rgba(255,79,131,.12),0 0 25px rgba(255,79,131,.7)}
+.event:nth-child(odd) .event-dot{right:-7px}
+.event:nth-child(even) .event-dot{left:-7px}
+.event-date{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--pink);font-weight:600}
+.event h3{font-family:"DM Serif Display",serif;font-size:30px;font-weight:400;margin:12px 0;color:#fff}
+.event p{color:#aa969f;font-size:14px;line-height:1.8}
+
+/* CARTA */
+.letter{margin-top:40px;padding:65px;position:relative;border:1px solid var(--line);border-radius:35px;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));overflow:hidden}
+.letter:after{content:"❤️";position:absolute;right:-20px;bottom:-50px;font-size:200px;opacity:.035}
+.letter h2{font-family:"DM Serif Display",serif;font-size:42px;font-weight:400;margin-bottom:30px}
+.letter p{color:#cbb8c0;line-height:2;font-size:15px;max-width:760px}
+.signature{font-family:Parisienne,cursive;font-size:38px;color:var(--rose);margin-top:35px}
+
+/* FRASE */
+.quote{padding:130px 20px;text-align:center;background:linear-gradient(180deg,transparent,rgba(115,22,58,.16),transparent)}
+.quote-mark{font-family:"DM Serif Display",serif;font-size:90px;color:var(--pink);line-height:.5}
+.quote p{max-width:800px;margin:35px auto;font-family:"DM Serif Display",serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:400;line-height:1.2}
+.quote small{color:#a997a0;text-transform:uppercase;letter-spacing:3px;font-size:9px}
+
+/* FINAL */
+.final{min-height:90svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px;background:radial-gradient(circle at center,#4b1530 0,#1b0915 45%,#080508 80%);position:relative}
+.final-content{max-width:850px}
+.final-heart{font-size:65px;margin-bottom:30px}
+.final h2{font-family:"DM Serif Display",serif;font-size:clamp(3.5rem,9vw,7.5rem);font-weight:400;line-height:.95}
+.final h2 span{color:var(--rose)}
+.final p{margin:30px auto;color:#cbb8c0;line-height:1.8;font-size:15px}
+.footer{margin-top:70px;color:#806d76;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+
+/* CORAÇÕES */
+.floating-heart{position:fixed;bottom:-30px;pointer-events:none;z-index:999;font-size:16px;animation:floatUp linear forwards}
+@keyframes floatUp{0%{transform:translateY(0);opacity:0}10%{opacity:.8}100%{transform:translateY(-110vh) rotate(180deg);opacity:0}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+@keyframes entrada{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+
+/* RESPONSIVO */
+@media(max-width:700px){
+.nav{height:60px;padding:0 20px}
+.logo{font-size:26px}
+.hero h1{letter-spacing:-1px}
+.heart{font-size:60px}
+.hero-text{font-size:14px}
+.section{padding:85px 15px}
+.counter{padding:35px 15px;border-radius:25px}
+.time{grid-template-columns:repeat(2,1fr)}
+.time-item{padding:20px 5px}
+.timeline:before{left:8px}
+.event,.event:nth-child(even),.event:nth-child(odd){width:100%;margin:0;text-align:left;padding:0 0 55px 40px}
+.event-dot,.event:nth-child(odd) .event-dot,.event:nth-child(even) .event-dot{left:1px;right:auto}
+.event h3{font-size:27px}
+.letter{padding:35px 25px;border-radius:25px}
+.letter h2{font-size:35px}
+.quote{padding:90px 20px}
 }
-</style>
-</head>
-<body><section class="inicio">
-<div class="inicio-conteudo">
-<div class="coracao-principal">❤️</div>
-<h1>Tenho uma surpresa para você...</h1>
-<p>Algumas histórias merecem ser lembradas para sempre. Esta é a nossa.</p>
-<a href="#historia" class="botao">Abrir surpresa ❤️</a>
+@media(prefers-reduced-motion:reduce){
+*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+}
+</style></head><body><div class="background">
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+</div><nav class="nav">
+<a href="#" class="logo">Nossa História</a>
+<a href="#historia" class="nav-link">Nossa história ↓</a>
+</nav><section class="hero">
+<div class="hero-content">
+<div class="eyebrow">Uma história escrita a dois</div>
+<div class="heart">❤️</div>
+<h1>Eu escolheria<br><span>você.</span></h1>
+<p class="hero-text">Entre tantos caminhos, a vida fez nossos caminhos se encontrarem. E desde então, começamos a escrever a nossa própria história.</p>
+<div class="hero-buttons">
+<a href="#historia" class="btn btn-primary">Conhecer nossa história ❤️</a>
+<a href="#carta" class="btn btn-outline">Uma mensagem para você</a>
 </div>
-</section><section class="conteudo" id="historia">
-<div class="container">
-<h2 class="titulo-secao">Nossa História</h2>
-<p class="subtitulo">Um pouquinho da história que estamos construindo juntos.</p><div class="contador">
-<h2>Nossa história começou há... ❤️</h2>
-<div class="tempo">
-<div class="tempo-item"><strong id="dias">0</strong><span>dias</span></div>
-<div class="tempo-item"><strong id="horas">0</strong><span>horas</span></div>
-<div class="tempo-item"><strong id="minutos">0</strong><span>minutos</span></div>
-<div class="tempo-item"><strong id="segundos">0</strong><span>segundos</span></div>
 </div>
-</div><div class="linha-tempo">
-<h2 class="titulo-historia">Alguns capítulos da nossa história ❤️</h2><div class="evento">
-<div class="evento-coracao">❤️</div>
-<div class="evento-conteudo">
-<span class="evento-data">15 de fevereiro de 2025</span>
-<h3>O começo de nós</h3>
-<p>Foi quando a nossa história começou. Um dia que passou a ter um significado completamente diferente para nós.</p>
+<div class="scroll">Deslize</div>
+</section><section class="section" id="historia">
+<div class="container"><div class="section-label">Desde o nosso começo</div>
+<h2 class="section-title">Tempo de nós</h2>
+<p class="section-description">Cada segundo representa mais um pedacinho da história que estamos construindo juntos.</p><div class="counter">
+<h3 class="counter-title">Estamos juntos há... ❤️</h3>
+<div class="time">
+<div class="time-item"><strong class="time-number" id="dias">0</strong><span class="time-label">Dias</span></div>
+<div class="time-item"><strong class="time-number" id="horas">0</strong><span class="time-label">Horas</span></div>
+<div class="time-item"><strong class="time-number" id="minutos">0</strong><span class="time-label">Minutos</span></div>
+<div class="time-item"><strong class="time-number" id="segundos">0</strong><span class="time-label">Segundos</span></div>
 </div>
-</div><div class="evento">
-<div class="evento-coracao">💕</div>
-<div class="evento-conteudo">
-<span class="evento-data">12 de março de 2025</span>
-<h3>O pedido de namoro</h3>
-<p>Mais uma data que ficou marcada na nossa história e que sempre fará parte das nossas lembranças.</p>
-</div>
-</div><div class="evento">
-<div class="evento-coracao">💍</div>
-<div class="evento-conteudo">
-<span class="evento-data">11 de julho de 2025</span>
-<h3>Nosso casamento</h3>
-<p>O dia em que escolhemos transformar nossa história em uma caminhada para a vida inteira.</p>
-</div>
-</div></div><div class="carta">
-<h2>Para você... ❤️</h2>
-<p>Existem pessoas que chegam em nossas vidas e tornam tudo um pouco mais especial.</p>
-<br>
-<p>Entre tantos caminhos, encontros, conversas, risadas e momentos, construímos uma história que eu quero guardar.</p>
-<br>
-<p>Esta página é apenas uma pequena forma de lembrar que alguns momentos passam, mas aquilo que sentimos pode permanecer para sempre.</p>
-<div class="assinatura">Com carinho ❤️</div>
 </div></div>
+</section><section class="section">
+<div class="container"><div class="section-label">Capítulos</div>
+<h2 class="section-title">Nossa história</h2>
+<p class="section-description">Algumas datas se tornam especiais porque passaram a fazer parte de nós.</p><div class="timeline"><div class="event">
+<div class="event-dot"></div>
+<span class="event-date">15 de fevereiro de 2025</span>
+<h3>O começo de nós ❤️</h3>
+<p>Foi quando a nossa história começou. Um dia que ganhou um significado completamente diferente e que marcou o início de uma nova caminhada.</p>
+</div><div class="event">
+<div class="event-dot"></div>
+<span class="event-date">12 de março de 2025</span>
+<h3>O pedido de namoro 💕</h3>
+<p>Um momento especial que transformou aquilo que já estava sendo construído em um compromisso ainda mais bonito entre nós.</p>
+</div><div class="event">
+<div class="event-dot"></div>
+<span class="event-date">11 de julho de 2025</span>
+<h3>Nosso casamento 💍</h3>
+<p>O dia em que dissemos sim para uma caminhada compartilhada e decidimos escrever juntos muitos outros capítulos.</p>
+</div></div></div>
+</section><section class="section" id="carta">
+<div class="container"><div class="section-label">De coração</div><div class="letter">
+<h2>Para você... ❤️</h2><p>Existem encontros que parecem acontecer por acaso, mas que mudam completamente o caminho que estamos percorrendo.</p><br><p>Entre conversas, risadas, desafios, abraços e tantos momentos que só nós conhecemos, fomos construindo algo que se tornou parte da nossa vida.</p><br><p>Talvez esta página seja pequena diante de tudo que ainda temos para viver, mas ela guarda uma certeza: eu sou grato por cada capítulo que já escrevemos e por todos aqueles que ainda vamos escrever.</p><div class="signature">Com amor, para sempre ❤️</div>
+</div></div>
+</section><section class="quote">
+<div class="quote-mark">“</div>
+<p>Algumas histórias são encontradas. As nossas, nós continuamos escrevendo.</p>
+<small>Uma história • Dois corações • Um propósito</small>
 </section><section class="final">
-<div>
-<h2>E isso é só o começo... ❤️</h2>
-<p>Ainda temos muitas páginas para escrever.</p>
-</div>
+<div class="final-content"><div class="final-heart">❤️</div><h2>E isso é<br><span>só o começo.</span></h2><p>Ainda existem muitos lugares para conhecer, muitos sonhos para realizar, muitos momentos para guardar e incontáveis páginas para escrever.</p><a href="#historia" class="btn btn-primary">Voltar ao começo ❤️</a>
+
+<div class="footer">Nossa História • 2025 — Sempre</div></div>
 </section><script>
 const dataInicio=new Date(2025,1,15,0,0,0);
+
 function atualizarContador(){
 const agora=new Date();
 let diferenca=agora-dataInicio;
 if(diferenca<0)diferenca=0;
-const totalSegundos=Math.floor(diferenca/1000);
-const dias=Math.floor(totalSegundos/86400);
-const horas=Math.floor((totalSegundos%86400)/3600);
-const minutos=Math.floor((totalSegundos%3600)/60);
-const segundos=totalSegundos%60;
-document.getElementById("dias").textContent=dias;
-document.getElementById("horas").textContent=horas;
-document.getElementById("minutos").textContent=minutos;
-document.getElementById("segundos").textContent=segundos;
+const total=Math.floor(diferenca/1000);
+document.getElementById("dias").textContent=Math.floor(total/86400);
+document.getElementById("horas").textContent=Math.floor(total%86400/3600);
+document.getElementById("minutos").textContent=Math.floor(total%3600/60);
+document.getElementById("segundos").textContent=total%60;
 }
+
 atualizarContador();
 setInterval(atualizarContador,1000);
 
-let quantidadeCoracoes=0;
-const limiteCoracoes=12;
+let coracoes=0;
+const limite=8;
 
 function criarCoracao(){
-if(quantidadeCoracoes>=limiteCoracoes)return;
+if(coracoes>=limite)return;
 
-const coracao=document.createElement("div");
-coracao.className="coracao";
-
-const simbolos=["❤️","💕","💗","💖"];
-coracao.textContent=simbolos[Math.floor(Math.random()*simbolos.length)];
-coracao.style.left=Math.random()*100+"vw";
-coracao.style.fontSize=Math.random()*16+12+"px";
-coracao.style.animationDuration=Math.random()*3+5+"s";
-
-document.body.appendChild(coracao);
-quantidadeCoracoes++;
+const el=document.createElement("div");
+el.className="floating-heart";
+el.textContent=["❤️","💕","💗","💖"][Math.floor(Math.random()*4)];
+el.style.left=Math.random()*100+"vw";
+el.style.fontSize=12+Math.random()*12+"px";
+el.style.animationDuration=6+Math.random()*3+"s";
+document.body.appendChild(el);
+coracoes++;
 
 setTimeout(()=>{
-coracao.remove();
-quantidadeCoracoes--;
-},8500);
+el.remove();
+coracoes--;
+},9500);
 }
 
-setInterval(criarCoracao,1800);
+setInterval(criarCoracao,2200);
 </script></body>
 </html>
